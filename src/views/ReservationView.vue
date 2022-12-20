@@ -2838,8 +2838,15 @@
     </div>
 
     <!-- 좌석 예약 페이지 -->
-    <div >
+    <div v-if="show">
         <SeatResevation></SeatResevation>
+
+    </div>
+
+    <!-- 결제 페이지 -->
+    <div>
+        <PaymentView></PaymentView>
+
 
     </div>
     
@@ -2851,7 +2858,8 @@
 <script>
 import NavBlack from '@/components/NavBlack.vue'
 // import SeatPopup from '@/components/SeatPopup.vue'
-import SeatResevation from '@/components/SeatReservation.vue'
+import SeatResevation from '@/components/reservation/SeatReservation.vue'
+import PaymentView from '@/components/reservation/PaymentView.vue'
 
 
 export default {
@@ -2859,6 +2867,7 @@ export default {
         NavBlack,
         // SeatPopup,
         SeatResevation,
+        PaymentView,
     },
     mounted() {
 
