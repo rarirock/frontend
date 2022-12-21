@@ -139,7 +139,7 @@ export default {
 }
 
 .site-nav2 .site-navigation2 .site-menu>li>a:hover {
-  color: #f00;
+  color: #fff;
 }
 
 .site-nav2 .site-navigation2 .site-menu>li.cta-button a {
@@ -277,7 +277,7 @@ export default {
 .site-nav2 .site-navigation2 .site-menu .has-children:hover>a,
 .site-nav2 .site-navigation2 .site-menu .has-children:focus>a,
 .site-nav2 .site-navigation2 .site-menu .has-children:active>a {
-  color: #f00;
+  color: #fff;
 }
 
 .site-nav2 .site-navigation2 .site-menu .has-children:hover,
