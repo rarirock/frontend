@@ -14,6 +14,11 @@ const routes = [
     name: 'reservation',
     component: () => import('../views/ReservationView.vue')
   },
+  {
+    path: '/reservation-check',
+    name: 'reservation-check',
+    component: () => import('../views/ReservationCheck.vue')
+  },
 ]
 
 const router = new VueRouter({
