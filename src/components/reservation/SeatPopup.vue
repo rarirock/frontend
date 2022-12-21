@@ -843,7 +843,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped >
 element.style {
     left: 50%;
     top: 50%;
