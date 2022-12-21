@@ -73,8 +73,9 @@
               </div>
               <div class="col-6 col-lg-3 text-lg-end">
                 <ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu">
+                  <li><a href="about.html">로그인</a></li>
                   <li><a href="about.html">회원가입</a></li>
-                  <li><a href="about.html">바로예매</a></li>
+                  <li><router-link to="/customer-center">고객센터</router-link></li>
                   <li>
                     <button class="btn_menu_all" style="border: none; background: none">
                       <img src="@/assets/images/icon/all_menu.png" width="17px" style="margin-top: -5px" alt="" />

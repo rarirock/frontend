@@ -52,7 +52,7 @@
                 class="js-clone-nav d-none d-lg-inline-block text-end site-menu"
               >
                 <li><a href="about.html">멤버십</a></li>
-                <li><a href="about.html">고객센터</a></li>
+                <li><router-link to="/customer-center">고객센터</router-link></li>
                 <li><a href="about.html">로그인</a></li>
               </ul>
             </div>

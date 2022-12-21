@@ -19,6 +19,11 @@ const routes = [
     name: 'reservation-check',
     component: () => import('../views/ReservationCheck.vue')
   },
+  {
+    path: '/customer-center',
+    name: 'customer-center',
+    component: () => import('../views/CustomerCenter.vue')
+  },
 ]
 
 const router = new VueRouter({
