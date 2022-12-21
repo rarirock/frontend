@@ -2839,6 +2839,7 @@
         </div>
 
 
+<<<<<<< Updated upstream
     <!-- 좌석 예약 페이지 -->
     <div v-if="show" >
         <SeatResevation></SeatResevation>
@@ -2852,6 +2853,18 @@
 
     </div>
     
+=======
+        <!-- 좌석 예약 페이지 -->
+        <div v-if="showSelectSeat">
+            <SeatResevation></SeatResevation>
+        </div>
+
+        <!-- 결제 페이지 -->
+        <div v-if="showPayment">
+            <PaymentView></PaymentView>
+        </div>
+
+>>>>>>> Stashed changes
 
 
     </div>
