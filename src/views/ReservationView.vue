@@ -2829,22 +2829,24 @@
         </div>
 
         
-        <!-- pop up 팝업 좌석 , seat -->
-        <div>
-        <!-- <SeatPopup ></SeatPopup> -->
-        </div>
-
         
     </div>
 
+    
+        <!-- pop up 팝업 좌석 , seat -->
+        <div>
+        <SeatPopup ></SeatPopup>
+        </div>
+
+
     <!-- 좌석 예약 페이지 -->
-    <div v-if="show">
+    <div v-if="show" >
         <SeatResevation></SeatResevation>
 
     </div>
 
     <!-- 결제 페이지 -->
-    <div>
+    <div v-if="show">
         <PaymentView></PaymentView>
 
 
@@ -2857,7 +2859,7 @@
 
 <script>
 import NavBlack from '@/components/NavBlack.vue'
-// import SeatPopup from '@/components/SeatPopup.vue'
+import SeatPopup from '@/components/reservation/SeatPopup.vue'
 import SeatResevation from '@/components/reservation/SeatReservation.vue'
 import PaymentView from '@/components/reservation/PaymentView.vue'
 
@@ -2865,7 +2867,7 @@ import PaymentView from '@/components/reservation/PaymentView.vue'
 export default {
     components: {
         NavBlack,
-        // SeatPopup,
+        SeatPopup,
         SeatResevation,
         PaymentView,
     },
