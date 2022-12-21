@@ -46,7 +46,7 @@
                                                 >전체</span></button>
                                         <div  class="tab_con">
                                             <h5  class="hidden">전체</h5>
-                                            <div  class="cinema_select_wrap cinemaSelect basicCinema">
+                                            <div  class="cinema_select_wrap cinemaSelect basicCinema" style="overflow:auto;">
                                                 <ul >
                                                     <li  class="depth1"><a 
                                                             href="#none">MY 영화관<em >(0)</em></a>
@@ -135,7 +135,7 @@
                                         style="position: relative; overflow: visible;">
                                         <div  id="mCSB_9" tabindex="0"
                                             class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
-                                            style="max-height: none;">
+                                            style="max-height: none; overflow:auto;">
                                             <div  id="mCSB_9_container" dir="ltr"
                                                 class="mCSB_container" style="position: relative; top: 0px; left: 0px;">
                                                 <ul >
@@ -730,7 +730,7 @@
                                         <ul  class="owl-carousel owl-loaded owl-drag">
                                             <div  class="owl-stage-outer">
                                                 <div  class="owl-carousel owl-stage"
-                                                    style="transform: translate3d(0px, 0px, 0px); transition: all 0.4s ease 0s; width: 735px;">
+                                                    style="transform: translate3d(0px, 0px, 0px); transition: all 0.4s ease 0s; width: 420px;">
                                                     <div  class="owl-item active"
                                                         style="width: 52.5px;">
                                                         <li  class="item"><strong 
@@ -901,13 +901,11 @@
                                         <div  class="tab_con ty5">
                                             <div  data-mcs-theme="minimal-dark"
                                                 class="timeScroll mCustomScrollbar _mCS_73 mCS-autoHide"
-                                                style="position: relative; overflow: visible;">
-                                                <div  id="mCSB_73" tabindex="0"
-                                                    class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
-                                                    style="max-height: none;">
+                                                style="position: relative; overflow: auto;">
+                                                <div>
                                                     <div  id="mCSB_73_container" dir="ltr"
                                                         class="mCSB_container"
-                                                        style="position: relative; top: 0px; left: 0px;">
+                                                        style="position: relative; top: 0px; left: 0px; overflow: auto; ">
                                                         <div  class="group_time_select">
                                                             <div  class="time_select_tit"><span
                                                                     
@@ -1471,7 +1469,7 @@ export default {
     autoplay: false, // 자동으로 이미지가 돌아가게 할 것인지
     smartSpeed:500, // 이미지 변경속도
     nav: true,  // 메뉴
-    items:9, // 초기화면에 표시할 이미지 개수
+    items:8, // 초기화면에 표시할 이미지 개수
     loop:false  // 마지막 사진이 오면 처음 사진으로 돌아가게 할 것인지
   });
 },
@@ -1492,13 +1490,6 @@ export default {
     background-color: #FFF;
 }
 
-.wrap_reserve .section_step_tit {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 78px;
-}
 
 .wrap_reserve .section_step_con.active {
     display: block;
@@ -1548,13 +1539,6 @@ textarea {
     border-bottom: 1px solid #DDD;
 }
 
-.wrap_reserve .section_step_con .article {
-    position: relative;
-    float: left;
-    height: 100%;
-    box-sizing: border-box;
-    background-color: #fff;
-}
 
 .wrap_reserve .section_step_con .article .group_top {
     overflow: hidden;
@@ -1587,18 +1571,11 @@ th {
 }
 
 .wrap_reserve .section_step_con .article.article_cinema>.inner {
-    overflow: fidden;
+    overflow: hidden;
     height: 815px;
     border-right: 1px solid #ddd;
 }
 
-.wrap_reserve .section_step_con .article.article_cinema>.inner .tab_wrap.outer {
-    padding-top: 61px;
-}
-
-.tab_wrap {
-    position: relative;
-}
 
 ul,
 ol {
@@ -2009,29 +1986,11 @@ dd {
     color: #666;
 }
 
-element.style {
-    cursor: default;
-    position: relative;
-    overflow: visible;
-    width: 50%;
-    top: 0;
-    left: 0;
-    max-height: 753px;
-    position: absolute;
-    min-height: 50px;
-    display: block;
-    height: 624px;
-    max-height: 719px;
-    line-height: 50px;
-}
 
 .wrap_reserve .section_step_con .article.article_cinema>.inner .tab_wrap.outer {
     padding-top: 61px;
 }
 
-.tab_wrap {
-    position: relative;
-}
 
 .tab_wrap.outer {
     padding-top: 80px;
@@ -2356,10 +2315,6 @@ a:-webkit-any-link {
     border-radius: 16px;
 }
 
-element.style {
-    width: 50%;
-    left: 50%;
-}
 
 .wrap_reserve .section_step_con .article.article_cinema>.inner .tab_wrap.outer>li>.tab_tit {
     height: 61px;
@@ -2454,13 +2409,6 @@ button {
     background-color: #F8F8F8;
 }
 
-.wrap_reserve .section_step_con .article {
-    position: relative;
-    float: left;
-    height: 100%;
-    box-sizing: border-box;
-    background-color: #FFF;
-}
 
 h4 {
     display: block;
@@ -2621,13 +2569,6 @@ a:hover {
     margin-right: 5px;
 }
 
-.ic_grade.gr_12 {
-    background-color: transparent;
-}
-
-.ic_grade.gr_12 {
-    background-color: #4DD6FF;
-}
 
 .ic_grade {
     display: inline-block;
@@ -2781,13 +2722,6 @@ a:hover {
     width: 500px;
 }
 
-.wrap_reserve .section_step_con .article {
-    position: relative;
-    float: left;
-    height: 100%;
-    box-sizing: border-box;
-    background-color: #FFF;
-}
 
 
 .date_select_wrap {
@@ -2824,22 +2758,7 @@ a:hover {
     -webkit-transform: translate3d(0px, 0px, 0px);
 }
 
-.owl-carousel {
-    position: relative;
-    display: block;
-    width: auto;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    z-index: 1;
-    -webkit-tap-highlight-color: transparent;
-}
 
-element.style {
-    transform: translate3d(0px, 0px, 0px);
-    transition: all 0.2s ease 0s;
-    width: 735px;
-}
 
 .owl-carousel .owl-stage {
     position: relative;
@@ -2998,10 +2917,6 @@ input {
     border-image: initial;
 }
 
-.date_select_wrap .date label {
-    display: block;
-    cursor: pointer;
-}
 
 .owl-carousel .owl-stage:after {
     content: ".";
@@ -3110,16 +3025,6 @@ input {
     -webkit-tap-highlight-color: transparent;
 }
 
-.owl-carousel {
-    position: relative;
-    display: block;
-    width: auto;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    z-index: 1;
-    -webkit-tap-highlight-color: transparent;
-}
 
 .owl-carousel .owl-nav [class*=owl-] span {
     font-size: 0;
@@ -3175,9 +3080,6 @@ input {
     width: 500px;
 }
 
-.tab_wrap.outer {
-    padding-top: 80px;
-}
 
 .tab_wrap {
     position: relative;
@@ -3286,10 +3188,6 @@ input {
 
 .time_select_tit .ic_grade {
     margin-right: 5px;
-}
-
-.ic_grade.gr_12 {
-    background-color: #4DD6FF;
 }
 
 .ic_grade {

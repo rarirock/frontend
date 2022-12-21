@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="dim">
         <div id="layerReserveStep01" class="layer_wrap layer_reserve layer_reserve01_sum2 active" tabindex="0"
             style="left: 50%; top: 50%; margin-top: -256.5px; margin-left: -250px;">
             <div class="layer_header">
@@ -823,8 +823,7 @@
                     </div>
                     <div class="group_btm" id="stepOnePopupContentsMsg">
                         <div class="txt_notice gr_12">
-                            <p class="tit"><span class="ic_grade gr_12">만 12세 이상 관람가</span>본 영화는 <strong>만 12세 이상
-                                    관람가</strong> 영화입니다.</p>
+                            <p class="tit"><span class="ic_grade gr_12">만 12세 이상 관람가</span>본 영화는 <strong>만 12세 이상 관람가</strong> 영화입니다.</p>
                             <p class="txt">만 12세 미만의 고객님(영, 유아 포함)은 반드시 부모님 또는 성인 보호자의 동반하에<br>관람이 가능합니다. 연령 확인 불가 시 입장이
                                 제한될 수 있습니다.</p>
                         </div>
@@ -844,12 +843,7 @@ export default {
 </script>
 
 <style scoped >
-element.style {
-    left: 50%;
-    top: 50%;
-    margin-top: -295.5px;
-    margin-left: -250px;
-}
+
 
 .layer_wrap.active.layer_reserve01_sum2 {
     width: 500px;
@@ -870,7 +864,13 @@ element.style {
     border-radius: 10px;
     background-color: #FFF;
 }
-
+.hidden {
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
 .layer_wrap {
     overflow: hidden;
     position: absolute;
@@ -889,10 +889,13 @@ element.style {
 .layer_wrap .layer_header {
     position: relative;
     height: 54px;
-    line-height: 58px;
+    line-height: 50px;
     border-bottom: 1px solid #CCC;
     color: #FFF;
     text-align: center;
+}
+.layer_wrap .layer_contents {
+    padding: 30px 25px;
 }
 
 .layer_wrap.layer_reserve .layer_header strong {
@@ -921,6 +924,18 @@ strong {
 
 .seat_infor_sum {
     text-align: center;
+}
+dl {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.btn_btm_wrap a, .btn_btm_wrap button {
+    margin: 0 4px;
+    min-width: 160px;
+    /* padding: 0 !important; */
 }
 
 .seat_infor_sum .group_top dl dt {
@@ -1031,12 +1046,22 @@ a:hover {
     text-align: center;
 }
 
-.seat_infor_sum .group_btm .txt_notice .tit {
-    margin-bottom: 5px;
-    font-size: 13px;
-    color: #111;
-    line-height: 1.3;
+body, input, button, select, textarea {
+    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+    font-size: 12px;
+    color: #000;
 }
+.dim, .dim2, .dimMulti {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    z-index: 98;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-y: scroll;
+}
+
 
 body,
 h1,
@@ -1064,9 +1089,38 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+.ic_grade.gr_all:before, .ic_grade.gr_12:before, .ic_grade.gr_15:before, .ic_grade.gr_18:before, .ic_grade.gr_non:before, .ic_grade:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+}
+.ic_grade:before {
+    margin-left: -1px;
+    font-weight: bold;
+    color: #FFF;
+    white-space: nowrap;
+}
+.ic_grade.gr_all:before {
+    font-size: 11px;
+}
+
 
 .ic_grade.gr_12:before {
     background: #e9b630 url("@/assets/images/common/grade_12.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_15:before {
+    background: #e98930 url("@/assets/images/common/grade_15.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_18:before {
+    background: #e93030 url("@/assets/images/common/grade_18.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_all:before {
+    background: #229c56 url("@/assets/images/common/grade_all.png") 0 0 no-repeat;
     background-size: 100%;
 }
 
@@ -1074,6 +1128,45 @@ p {
     border-bottom: 1px solid #e9b630;
     color: #e9b630;
 }
+.seat_infor_sum .group_btm .txt_notice.gr_15 strong {
+    border-bottom: 1px solid #e98930;
+    color: #e98930;
+}
+.seat_infor_sum .group_btm .txt_notice.gr_18 strong {
+    border-bottom: 1px solid #e93030;
+    color: #e93030;
+}
+.seat_infor_sum .group_btm .txt_notice.gr_all strong {
+    border-bottom: 1px solid #229c56;
+    color: #229c56;
+}
+.ic_grade.gr_all {
+    background-color: transparent;
+}
+.ic_grade.gr_12 {
+    background-color: transparent;
+}
+.ic_grade.gr_15 {
+    background-color: transparent;
+}
+.ic_grade.gr_18 {
+    background-color: transparent;
+}
+.seat_infor_sum .group_btm .txt_notice .tit {
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #111;
+}
+.ic_grade {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
 
 .seat_infor_sum .group_btm .txt_notice .txt {
     line-height: 1.4;

@@ -89,29 +89,34 @@
                                 <div class="count_people">
                                     <h6 class="hidden">인원선택</h6>
                                     <ul>
-                                        <li id="person_10" data-code="10" data-peple="성인" data-count="0"><strong
-                                                class="tit">성인</strong><span class="bx_num"><button class="btn_mins"
-                                                    id="Minus|10">감소</button>
-                                                <div class="txt_num">0</div><button class="btn_plus"
-                                                    id="Plus|10">증가</button>
+                                        <li id="person_10" data-code="10" data-peple="성인" data-count="0">
+                                            <strong class="tit">성인</strong>
+                                            <span class="bx_num">
+                                                <button class="btn_mins" id="Minus|10"> <img src="../../assets/images/icon/minus_12.png" > 감소</button>
+                                                <div class="txt_num">0</div>
+                                                <button class="btn_plus" id="Plus|10">증가</button>
                                             </span></li>
-                                        <li id="person_20" data-code="20" data-peple="청소년" data-count="0"><strong
-                                                class="tit">청소년</strong><span class="bx_num"><button class="btn_mins"
-                                                    id="Minus|20">감소</button>
-                                                <div class="txt_num">0</div><button class="btn_plus"
-                                                    id="Plus|20">증가</button>
+                                        <li id="person_20" data-code="20" data-peple="청소년" data-count="0">
+                                            <strong  class="tit">청소년</strong>
+                                                <span class="bx_num">
+                                                    <button class="btn_mins"  id="Minus|20"><img src="../../assets/images/icon/minus_12.png" >감소</button>
+                                                <div class="txt_num">0</div>
+                                                <button class="btn_plus" id="Plus|20">증가</button>
                                             </span></li>
-                                        <li id="person_12" data-code="12" data-peple="시니어" data-count="0"><strong
-                                                class="tit">시니어</strong><span class="bx_num"><button class="btn_mins"
-                                                    id="Minus|12">감소</button>
-                                                <div class="txt_num">0</div><button class="btn_plus"
-                                                    id="Plus|12">증가</button>
+                                        <li id="person_12" data-code="12" data-peple="시니어" data-count="0">
+                                            <strong
+                                                class="tit">시니어</strong>
+                                                <span class="bx_num">
+                                                    <button class="btn_mins"   id="Minus|12"><img src="../../assets/images/icon/minus_12.png" >감소</button>
+                                                <div class="txt_num">0</div>
+                                                <button class="btn_plus"  id="Plus|12">증가</button>
                                             </span></li>
-                                        <li id="person_11" data-code="11" data-peple="장애인" data-count="0"><strong
-                                                class="tit">장애인</strong><span class="bx_num"><button class="btn_mins"
-                                                    id="Minus|11">감소</button>
-                                                <div class="txt_num">0</div><button class="btn_plus"
-                                                    id="Plus|11">증가</button>
+                                        <li id="person_11" data-code="11" data-peple="장애인" data-count="0">
+                                            <strong   class="tit">장애인</strong>
+                                                <span class="bx_num">
+                                                    <button class="btn_mins"  id="Minus|11"><img src="../../assets/images/icon/minus_12.png" >감소</button>
+                                                <div class="txt_num">0</div>
+                                                <button class="btn_plus" slot="" id="Plus|11">증가</button>
                                             </span></li>
                                     </ul>
                                 </div>
@@ -2206,6 +2211,13 @@ export default {
     margin: 0 auto;
     background-color: #FFF;
 }
+.wrap_reserve .section_step_tit ul li > a > strong {
+    display: block;
+    line-height: 1.5;
+    padding-top: 80px;
+    font-size: 13px;
+    text-align: center;
+}
 .hidden {
     overflow: hidden;
     position: absolute !important;
@@ -2221,6 +2233,7 @@ body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
     margin: 0;
     padding: 0;
 }
+
 h2 {
     display: block;
     font-size: 1.5em;
@@ -2379,10 +2392,6 @@ body, textarea {
     line-height: 1.1;
     letter-spacing: -0.03em;
 }
-body, input, button, select, textarea {
-    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
-    color: #000;
-}
 h6 {
     display: block;
     font-size: 0.67em;
@@ -2415,10 +2424,7 @@ img {
 div {
     display: block;
 }
-.select_num_people_wrap .movie_infor .group_infor .bx_tit {
-    display: block;
-    margin-bottom: 10px;
-}
+
 .select_num_people_wrap .movie_infor .group_infor .bx_tit .ic_grade {
     margin: -5px 4px 0 0;
 }
@@ -2459,6 +2465,10 @@ div {
 strong {
     font-weight: bold;
 }
+.select_num_people_wrap .movie_infor .group_infor .bx_tit {
+    display: block;
+    margin-bottom: 5px;
+}
 .select_num_people_wrap .movie_infor .group_infor dl {
     position: relative;
 }
@@ -2477,13 +2487,10 @@ strong {
     margin-bottom: 5px;
     font-size: 11px;
 }
-.select_num_people_wrap .movie_infor .group_infor dl dd.sub_info1 em {
-    font-size: 10px;
-}
-.select_num_people_wrap .movie_infor .group_infor dl dd.sub_info1 .time {
-    position: relative;
-    padding-left: 9px;
-    margin-left: 10px;
+body, input, button, select, textarea {
+    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+    font-size: 12px;
+    color: #000;
 }
 .select_num_people_wrap .movie_infor .group_infor dl dd.sub_info1 .time:before {
     content: "";
@@ -2495,20 +2502,21 @@ strong {
     height: 10px;
     background: #ddd;
 }
+.select_num_people_wrap .movie_infor .group_infor dl dd.sub_info1 em {
+    font-size: 10px;
+}
+.select_num_people_wrap .movie_infor .group_infor dl dd.sub_info1 .time {
+    position: relative;
+    padding-left: 9px;
+    margin-left: 10px;
+}
+
 .select_num_people_wrap .movie_infor .group_infor dl dt {
     overflow: hidden;
     position: absolute !important;
     width: 1px;
     height: 1px;
     clip: rect(1px, 1px, 1px, 1px);
-}
-.select_num_people_wrap .movie_infor .group_infor dl dd.sub_info1 {
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-bottom: 5px;
-    font-size: 11px;
 }
 .select_num_people_wrap .count_people {
     float: right;
@@ -2524,7 +2532,7 @@ strong {
 }
 .select_num_people_wrap .count_people > ul > li .tit {
     margin-right: 8px;
-    font-size: 13px;
+    /* font-size: 13px; */
 }
 strong {
     font-weight: bold;
@@ -2541,7 +2549,6 @@ strong {
 }
 .bx_num .btn_mins {
     left: 0;
-    background-image: url('@/assets/images/icon/minu_12.png');
 }
 .bx_num .btn_plus, .bx_num .btn_mins {
     position: absolute;
@@ -2553,6 +2560,7 @@ strong {
     text-indent: -9999em;
     font: 0 auto;
 }
+
 button {
     cursor: pointer;
 }
@@ -2591,12 +2599,6 @@ button {
     display: block;
     clear: both;
 }
-.select_seat_wrap {
-    overflow: hidden;
-    height: 638px;
-    color: #FFF;
-    background-color: #000;
-}
 .select_seat_wrap .top_txt_info {
     margin: 15px 0 25px;
     text-align: center;
@@ -2608,6 +2610,10 @@ button {
     color: #fff;
     font-size: 11px;
 }
+ul, ol {
+    list-style: none;
+}
+
 .select_seat_wrap .top_txt_info p:before {
     content: "";
     display: block;
@@ -2843,22 +2849,16 @@ a, a:link, a:visited, a:active, a:hover {
 }
 .seat_btm_box {
     overflow: hidden;
-    margin: 35px 0 0 40px;
+    margin: -20px 0 0 35px;
 }
 .seat_btm_box .seat_type_box {
-    width: 690px;
+    width: 775px;
 }
 .seat_btm_box .seat_type_box {
     float: left;
 }
 .seat_btm_box .seat_type_box .top_info {
     margin-bottom: 15px;
-}
-.select_seat_wrap {
-    overflow: hidden;
-    height: 638px;
-    color: #FFF;
-    background-color: #000;
 }
 .seat_btm_box .seat_type_box span.seat_type1 {
     background: url('@/assets/images/icon/ic_seat_type1.png') no-repeat 0 4px;
@@ -2988,11 +2988,6 @@ dl.total_price:after {
     content: "";
     display: block;
     clear: both;
-}
-body, input, button, select, textarea {
-    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
-    font-size: 12px;
-    color: #000;
 }
 div {
     display: block;

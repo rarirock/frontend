@@ -57,10 +57,10 @@ export default {
     },
     data() {
         return {
-            showSelectMovie: true,
+            showSelectMovie: false,
             showSelectMoviePopup: false,
             showSelectSeat: false,
-            showPayment: false,
+            showPayment: true,
         }
     },
 

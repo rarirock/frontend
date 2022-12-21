@@ -9,13 +9,13 @@
                                 <div class="bx_con">
                                     <dl>
                                         <dt>선택한 영화 제목</dt>
-                                        <dd>아바타: 물의 길(2D)</dd>
+                                        <dd>아바타: 물의 길(3D)</dd>
                                         <dt>선택한 상영관</dt>
                                         <dd>노원 1관</dd>
                                         <dt>선택한 상영 날짜</dt>
-                                        <dd>2022-12-20 (화)</dd>
+                                        <dd>2022-12-21 (수)</dd>
                                         <dt>선택한 시간</dt>
-                                        <dd>22:35 ~ 25:57</dd>
+                                        <dd>20:05 ~ 23:27</dd>
                                     </dl>
                                 </div>
                             </a></li>
@@ -25,7 +25,7 @@
                                         <dt>선택한 인원</dt>
                                         <dd>성인1</dd>
                                         <dt>선택한 좌석</dt>
-                                        <dd>F9</dd>
+                                        <dd>F14</dd>
                                     </dl>
                                 </div>
                             </a></li>
@@ -33,11 +33,11 @@
                                 <div class="bx_con">
                                     <dl>
                                         <dt>티켓금액</dt>
-                                        <dd>14,000원</dd>
+                                        <dd>16,000원</dd>
                                         <dt>할인금액</dt>
                                         <dd>0원</dd>
                                         <dt>총합계</dt>
-                                        <dd>14,000원</dd>
+                                        <dd>16,000원</dd>
                                     </dl>
                                 </div>
                             </a></li>
@@ -61,12 +61,12 @@
                             <div class="movie_infor new2020"><span class="thm"><img
                                         src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/18755_104_1.jpg"
                                         alt="아바타: 물의 길"></span><strong class="tit"><span
-                                        class="ic_grade gr_12"></span>&nbsp;아바타: 물의 길(2D)</strong>
+                                        class="ic_grade gr_12"></span>&nbsp;아바타: 물의 길(3D)</strong>
                                 <dl class="dlist_infor">
                                     <dt>일시</dt>
-                                    <dd><strong>2022-12-20 (화) 22:35 ~ 25:57</strong></dd>
+                                    <dd><strong>2022-12-21 (수) 20:05 ~ 23:27</strong></dd>
                                     <dt>영화관</dt>
-                                    <dd>노원 1관 - 2D</dd>
+                                    <dd>노원 1관 - 3D</dd>
                                     <dt>인원</dt>
                                     <dd>성인1</dd>
                                 </dl>
@@ -74,11 +74,11 @@
                             <div class="seat_infor">
                                 <dl class="dlist_infor">
                                     <dt>좌석</dt>
-                                    <dd><strong>F9</strong></dd>
+                                    <dd><strong>F14</strong></dd>
                                 </dl>
                             </div>
-                            <div class="addprodlistwrap">
-                                <h5 class="tit"></h5>
+                            <!-- <div class="addprodlistwrap">
+                                <h5 class="tit">추가상품 구매</h5>
                                 <div class="mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar"
                                     data-mcs-theme="minimal-dark" id="mCustomScrollbar1"
                                     style="position: relative; overflow: visible;">
@@ -89,16 +89,19 @@
                                             class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
                                             style="position:relative; top:0; left:0;" dir="ltr">
                                             <ul class="addprodlist">
-                                                <li>
+                                                <li><a href="#">
                                                         <div class="pay_movie_infor">
-                                                            <div class="img_product"><span class="thm"></span></div>
+                                                            <div class="img_product"><span class="thm"><img
+                                                                        src="https://caching.lottecinema.co.kr//Media/WebAdmin/cc222cc25ab7487580e10143f2a4e52b.png"
+                                                                        alt="포토티켓" class="mCS_img_loaded"></span></div>
                                                             <div class="bx_infor">
                                                                 <div class="badge_wrap"></div><strong
-                                                                    class="tit"></strong>
-                                                                <div class="between_txt"></div>
+                                                                    class="tit">포토티켓</strong>
+                                                                <div class="between_txt"><span><span
+                                                                            class="pay">1,000</span> 원</span></div>
                                                             </div>
                                                         </div>
-                                                    </li>
+                                                    </a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -114,7 +117,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="article article_pay_method">
@@ -128,7 +131,7 @@
                                     style="max-height: none;" tabindex="0">
                                     <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
                                         style="position:relative; top:0; left:0;" dir="ltr">
-                                        <div class="group_discount" style="display: block;">
+                                        <!-- <div class="group_discount" style="display: block;">
                                             <h3 class="tit_payment">할인/포인트</h3>
                                             <div class="tab_wrap3 reset selected">
                                                 <div class="tab_tit case2">
@@ -154,7 +157,7 @@
                                                 </div>
                                             </div>
                                             <div class="toggle_wrap no couplechk" style="display: none;"></div>
-                                        </div>
+                                        </div> -->
                                         <div class="group_payment">
                                             <h5 class="tit_payment">최종 결제수단</h5>
                                             <div class="bx_cate">
@@ -188,7 +191,7 @@
                             <h4 class="tit">결제하기</h4>
                         </div>
                         <div class="inner">
-                            <div class="select_item_wrap">
+                            <!-- <div class="select_item_wrap">
                                 <div class="group_item active">
                                     <div class="bx_item"><input type="checkbox" id="chkSavingPoint" checked=""><label
                                             for="chkSavingPoint" class="ty2">L.POINT 적립</label>
@@ -243,11 +246,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="payment_sum_wrap">
                                 <dl>
                                     <dt>상품금액</dt>
-                                    <dd><strong>14,000</strong>원</dd>
+                                    <dd><strong>16,000</strong>원</dd>
                                 </dl>
                                 <dl>
                                     <dt>할인금액</dt>
@@ -255,7 +258,7 @@
                                 </dl>
                                 <dl>
                                     <dt>결제금액</dt>
-                                    <dd>총<strong>14,000</strong>원</dd>
+                                    <dd>총<strong>16,000</strong>원</dd>
                                 </dl><a href="#none" class="btn_col1 btn_confirm">결제하기</a>
                             </div>
                         </div>
@@ -276,6 +279,20 @@ export default {
 </script>
 
 <style scoped >
+#contents.contents_reserve {
+    padding-bottom: 70px;
+    background-color: #444;
+}
+
+#contents.contents_full {
+    width: 100%;
+}
+
+#contents {
+    width: 980px;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+}
 
 .wrap_reserve {
     overflow: hidden;
@@ -285,6 +302,148 @@ export default {
     margin: 0 auto;
     background-color: #FFF;
 }
+.hidden {
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6, address, caption, em, th {
+    font-style: normal;
+    font-weight: normal;
+}
+body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
+    margin: 0;
+    padding: 0;
+}
+.wrap_reserve .section_step_tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-left:-10px;
+    margin-left: -40px;
+    width: 120px;
+}
+.wrap_reserve .section_step_tit ul li.active {
+    border-color: #FF243E;
+    border-bottom-color: #666;
+    background-color: #FF243E;
+}
+.wrap_reserve .section_step_tit ul li.active > a:before {
+    content: "현재 단계";
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    text-indent: -9999em;
+}
+.wrap_reserve .section_step_tit ul li.active > a > strong {
+    font-size: 15px;
+}
+.wrap_reserve .section_step_tit ul li.active > a .bx_con {
+    background-color: #FF243E;
+}
+
+body, input, button, select, textarea {
+    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+    font-size: 12px;
+    color: #000;
+}
+body, textarea {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+
+.wrap_reserve .section_step_con:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.wrap_reserve .section_step_tit ul li.active > a {
+    color: #FFF;
+}
+.wrap_reserve .section_step_tit ul {
+    height: 100%;
+}
+ul, ol {
+    list-style: none;
+}
+.wrap_reserve .section_step_tit ul li.prev {
+    border-color: #333;
+    border-bottom-color: #666;
+    background-color: #333;
+}
+.wrap_reserve .section_step_tit ul li.prev > a {
+    color: #FFF;
+}
+.wrap_reserve .section_step_tit ul li > a {
+    display: block;
+    height: 100%;
+    color: #666;
+}
+.wrap_reserve .section_step_tit ul li > a > strong {
+    display: block;
+    line-height: 1.5;
+    padding-top: 80px;
+    font-size: 13px;
+    text-align: center;
+}
+.wrap_reserve .section_step_tit ul li > a > strong span {
+    font-family: 'Roboto';
+    font-size: 13px;
+}
+.wrap_reserve .section_step_tit ul li > a .bx_con {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 77px;
+    top: -1px;
+    bottom: 0;
+    width: 172px;
+    padding-left: 20px;
+    border-top: 1px solid #666;
+    background-color: #333;
+}
+.wrap_reserve .section_step_tit ul li > a .bx_con dl {
+    margin-top: 52px;
+}
+.wrap_reserve .section_step_tit ul li > a .bx_con dl dt {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+.wrap_reserve .section_step_tit ul li > a .bx_con dl dd {
+    margin-bottom: 17px;
+}
+a, a:link, a:visited, a:active, a:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wrap_reserve .section_step_tit ul li {
+    position: relative;
+    height: 25%;
+    box-sizing: border-box;
+    border: 1px solid #666;
+    border-top: none;
+    background-color: #FFF;
+    z-index: 10;
+}
 .wrap_reserve .section_step_con.active {
     display: block;
     overflow: inherit;
@@ -293,53 +452,55 @@ export default {
     height: 100%;
     margin-left: 78px;
 }
+
 .wrap_reserve .section_step_con {
     overflow: hidden;
     position: absolute;
     height: 0;
 }
+
 .wrap_reserve .section_step_con .article.article_sum_infor {
     width: 301px;
 }
-.wrap_reserve .section_step_con .article .group_top {
-    overflow: hidden;
-    position: relative;
-    height: 55px;
-    line-height: 55px;
-    border-right: 1px solid #222;
-    text-align: center;
-    background-color: #000;
-}
+
+
 .wrap_reserve .section_step_con .article .group_top .tit {
     font-size: 18px;
     color: #FFF;
 }
-.wrap_reserve .section_step_con .article.article_sum_infor > .inner {
+
+.wrap_reserve .section_step_con .article.article_sum_infor>.inner {
     overflow: hidden;
     height: 815px;
     border-right: 1px solid #DDD;
 }
+
 .article_sum_infor .movie_infor {
     padding: 30px 30px 18px;
     border-bottom: 1px solid #DDD;
 }
+
 .article_sum_infor .movie_infor.new2020 .thm {
     margin-bottom: 20px;
     text-align: center;
 }
+
 .article_sum_infor .movie_infor .thm {
     display: block;
     overflow: hidden;
     border-radius: 4px;
 }
+
 .article_sum_infor .movie_infor.new2020 .thm img {
     width: 120px;
 }
+
 .article_sum_infor .movie_infor .tit {
     display: block;
     margin-bottom: 10px;
     font-size: 17px;
 }
+
 .article_sum_infor dl.dlist_infor dd {
     float: left;
     margin-bottom: 7px;
@@ -347,10 +508,26 @@ export default {
     width: 200px;
     word-break: keep-all;
 }
-body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+fieldset,
+ul,
+ol,
+dl,
+dt,
+dd,
+p,
+figure {
     margin: 0;
     padding: 0;
 }
+
 dl {
     display: block;
     margin-block-start: 1em;
@@ -358,6 +535,7 @@ dl {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
 .article_sum_infor dl.dlist_infor dt {
     clear: both;
     float: left;
@@ -365,21 +543,26 @@ dl {
     margin-bottom: 7px;
     font-size: 11px;
 }
+
 .article_sum_infor dl.dlist_infor dd strong {
     font-size: 11px;
 }
+
 strong {
     font-weight: bold;
 }
+
 .article_sum_infor dl.dlist_infor:after {
     content: "";
     display: block;
     clear: both;
 }
+
 .article_sum_infor .seat_infor {
     padding: 24px 30px 15px;
     border-bottom: 1px solid #DDD;
 }
+
 dl {
     display: block;
     margin-block-start: 1em;
@@ -387,6 +570,7 @@ dl {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
 .article_sum_infor dl.dlist_infor dt {
     clear: both;
     float: left;
@@ -394,6 +578,7 @@ dl {
     margin-bottom: 7px;
     font-size: 11px;
 }
+
 .article_sum_infor dl.dlist_infor dd {
     float: left;
     margin-bottom: 7px;
@@ -401,42 +586,43 @@ dl {
     width: 200px;
     word-break: keep-all;
 }
+
 .article_sum_infor .addprodlistwrap {
     position: relative;
     padding: 25px 20px 25px 30px;
 }
+
 .article_sum_infor .addprodlistwrap .tit {
     padding-bottom: 5px;
     font-size: 13px;
     line-height: 18px;
 }
+
 .addprodlistwrap .mCustomScrollbar {
     width: 250px;
     height: 360px;
     padding-right: 18px;
 }
-.mCustomScrollBox {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    max-width: 100%;
-    outline: none;
-    direction: ltr;
-}
+
+
 .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
     margin-right: 0;
 }
+
 .mCSB_container {
     overflow: hidden;
     width: auto;
     height: auto;
 }
+
 .addprodlistwrap .addprodlist {
     width: 240px;
 }
+
 .addprodlistwrap .addprodlist li {
     position: relative;
 }
+
 .addprodlistwrap .addprodlist .pay_movie_infor {
     display: flex;
     position: relative;
@@ -446,45 +632,56 @@ dl {
     background-color: #fff;
     box-sizing: border-box;
 }
+
 .addprodlistwrap .pay_movie_infor .img_product {
     min-height: 68px;
     margin-right: 10px;
     line-height: 68px;
-}.addprodlistwrap .pay_movie_infor .img_product .thm {
+}
+
+.addprodlistwrap .pay_movie_infor .img_product .thm {
     display: inline-block;
     overflow: hidden;
     width: 72px;
     height: 58px;
     vertical-align: middle;
 }
+
 .addprodlistwrap .pay_movie_infor .img_product .thm img {
     width: 100%;
     height: 100%;
 }
-.addprodlistwrap .pay_movie_infor .img_product + .bx_infor {
+
+.addprodlistwrap .pay_movie_infor .img_product+.bx_infor {
     display: flex;
     flex: 1;
     flex-flow: column;
     justify-content: center;
 }
+
 .addprodlistwrap .pay_movie_infor .bx_infor .badge_wrap {
     display: inline-block;
     padding-bottom: 3px;
 }
+
 .addprodlistwrap .pay_movie_infor .bx_infor .between_txt {
     display: initial;
     font-size: 11px;
     text-align: right;
 }
-.addprodlistwrap .pay_movie_infor .bx_infor .between_txt .pay, .addprodlistwrap .pay_movie_infor .bx_infor .between_txt .num {
+
+.addprodlistwrap .pay_movie_infor .bx_infor .between_txt .pay,
+.addprodlistwrap .pay_movie_infor .bx_infor .between_txt .num {
     font-family: 'Roboto';
     font-size: 17px;
     font-weight: normal;
 }
+
 .wrap_reserve .section_step_con .article.article_pay_method {
     width: 487px;
     background-color: #F8F8F8;
 }
+
 .wrap_reserve .section_step_con .article {
     position: relative;
     float: left;
@@ -492,24 +689,18 @@ dl {
     box-sizing: border-box;
     background-color: #FFF;
 }
-.wrap_reserve .section_step_con .article .group_top {
-    overflow: hidden;
-    position: relative;
-    height: 55px;
-    line-height: 55px;
-    border-right: 1px solid #222;
-    text-align: center;
-    background-color: #000;
-}
+
 .wrap_reserve .section_step_con .article .group_top .tit {
     font-size: 18px;
     color: #FFF;
 }
+
 .wrap_reserve .section_step_con .article .group_top .btn_txt_reset {
     position: absolute;
     right: 32px;
     top: 14px;
 }
+
 .btn_txt_reset {
     height: 28px;
     line-height: 28px;
@@ -521,13 +712,24 @@ dl {
     color: #000;
     background: #FFF url("@/assets/images/icon/reset.png") no-repeat 12px 51%;
 }
-.wrap_reserve .section_step_con .article.article_pay_method > .inner {
+
+.wrap_reserve .section_step_con .article.article_pay_method>.inner {
     overflow: hidden;
     height: 815px;
     border-right: 1px solid #DDD;
 }
-.wrap_reserve .section_step_con .article.article_pay_method > .inner .mCustomScrollbar {
+
+.wrap_reserve .section_step_con .article.article_pay_method>.inner .mCustomScrollbar {
     height: 815px;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 .mCustomScrollBox {
     position: relative;
@@ -537,33 +739,39 @@ dl {
     outline: none;
     direction: ltr;
 }
+
 .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
     margin-right: 0;
 }
+
 .mCSB_container {
     overflow: hidden;
     width: auto;
     height: auto;
 }
+
 .group_discount {
     padding: 0 18px;
     border-top: 5px solid #f8f8f8;
 }
+
 .group_discount {
     min-height: 365px;
     padding: 15px 30px;
     border-bottom: 1px solid #EEE;
 }
-.article_pay_method .tit_payment {
-    display: block;
-    margin: 18px 0 16px;
-    font-size: 15px;
-}
+
+
 .tab_wrap3.reset.selected {
     border: 1px solid #000;
 }
 .tab_wrap3.reset {
     overflow: hidden;
+}
+
+.bx_cate {
+    width: auto;
+    margin: auto;
 }
 .tab_wrap3 {
     margin: 10px 0 10px;
@@ -574,18 +782,42 @@ dl {
 .tab_wrap3 .tab_tit {
     margin-bottom: -1px;
 }
+
 .tab_wrap3 .tab_tit ul {
     display: flex;
 }
+
 .tab_wrap3 .tab_tit li {
     flex: 2;
 }
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
 .tab_wrap3.reset.selected .tab_tit li button {
     color: #000;
     background-color: #FFF;
 }
+
 .tab_wrap3.reset .tab_tit li button {
     border-bottom-width: 0;
+}
+.tab_wrap3 .tab_tit li:first-child button {
+    border-radius: 4px 0 0 0;
+    border-left: none;
+}
+.tab_wrap3 .tab_tit li button.active {
+    border-bottom-width: 0;
+    color: #000;
+    background-color: #FFF;
+}
+
+.tab_wrap3 .tab_tit li button .point {
+    color: #2AA3FE;
+}
+.list_pay_item {
+    margin: 0 -1%;
 }
 .tab_wrap3 .tab_tit li button {
     display: block;
@@ -607,17 +839,65 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
-.list_pay_item {
-    margin: 0 -1%;
+button {
+    border: 1px solid #DDD;
+    cursor: pointer;
+    background-color: #fff;
 }
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+input, select, button {
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+div {
+    display: block;
+}
+
+h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
 .list_pay_item.cate4 li {
     position: relative;
     width: 23%;
 }
+
 .list_pay_item li {
     float: left;
     margin: 0 1% 10px;
 }
+
 .group_discount .wrap_coupon .bx_cate .list_pay_item li button {
     overflow: visible;
     position: relative;
@@ -625,11 +905,13 @@ ul {
     line-height: 55px;
     font-size: 11px;
 }
+
 .list_pay_item li button {
     width: 100%;
     border-radius: 4px;
     background-color: #FFF;
 }
+
 .group_discount .wrap_coupon .bx_cate .list_pay_item .txt_cnt {
     position: absolute;
     right: 4px;
@@ -645,41 +927,50 @@ ul {
     text-align: center;
     background-color: #000;
 }
+
 .group_discount .wrap_coupon .bx_cate .list_pay_item li button {
     overflow: visible;
     position: relative;
     height: 55px;
 }
+
 .list_pay_item:after {
     content: "";
     display: block;
     clear: both;
 }
+
 .toggle_wrap.couplechk {
     margin: 10px 0 20px 0;
     border: 0;
     border-top: 1px solid #ddd;
 }
+
 .group_payment {
     padding: 15px 30px;
 }
+
 .article_pay_method .tit_payment {
     display: block;
     margin: 18px 0 16px;
     font-size: 15px;
 }
+
 .list_pay_item.cate6 li {
     position: relative;
     width: 31.3%;
 }
+
 .list_pay_item li {
     float: left;
     margin: 0 1% 10px;
 }
+
 .group_payment .bx_cate .list_pay_item li button.cate1 {
     background-image: url("@/assets/images/payment/method_ic_card.png");
     background-position: center 17px;
 }
+
 .group_payment .bx_cate .list_pay_item li button {
     overflow: visible;
     position: relative;
@@ -687,10 +978,12 @@ ul {
     line-height: 95px;
     background-repeat: no-repeat;
 }
+
 .group_payment .bx_cate .list_pay_item li button.cate2 {
     background-image: url("@/assets/images/payment/method_ic_lpay_20210407.png");
     background-position: center 17px;
 }
+
 .group_payment .bx_cate .list_pay_item li button {
     overflow: visible;
     position: relative;
@@ -698,6 +991,7 @@ ul {
     line-height: 95px;
     background-repeat: no-repeat;
 }
+
 .group_payment .bx_cate .list_pay_item li button.cate3 {
     background-image: url("@/assets/images/payment/method_ic_simple.png");
     background-position: center 17px;
@@ -707,33 +1001,30 @@ ul {
     background-image: url("@/assets/images/payment/method_ic_deposit.svg");
     background-position: center 14px;
 }
+
 .group_payment .bx_cate .list_pay_item li button.cate4 {
     background-image: url("@/assets/images/payment/method_ic_phone.png");
     background-position: center 14px;
 }
+
 .wrap_reserve .section_step_con .article.article_payment {
     width: 414px;
 }
 
-.wrap_reserve .section_step_con .article .group_top {
-    overflow: hidden;
-    position: relative;
-    height: 55px;
-    line-height: 55px;
-    border-right: 1px solid #222;
-    text-align: center;
-    background-color: #000;
-}
+
 .article_payment .select_item_wrap .group_item {
     padding: 10px 0 25px 0;
     border-bottom: 1px solid #DDD;
     background-color: #FFF;
 }
+
 .article_payment .select_item_wrap .group_item .bx_item {
     position: relative;
     padding: 15px 30px 10px;
 }
-input[type="radio"], input[type="checkbox"] {
+
+input[type="radio"],
+input[type="checkbox"] {
     position: relative;
     top: 0;
     left: 0;
@@ -746,32 +1037,41 @@ input[type="radio"], input[type="checkbox"] {
     vertical-align: middle;
     border: none 0;
 }
+
 .article_payment .select_item_wrap .group_item .bx_item input[type="checkbox"] {
     position: absolute;
 }
-.article_payment .select_item_wrap .group_item .bx_item input[type="checkbox"] + label {
+
+.article_payment .select_item_wrap .group_item .bx_item input[type="checkbox"]+label {
     display: block;
     float: left;
     width: auto;
     font-family: 'Roboto';
     font-size: 13px;
 }
-input[type="radio"] + label:last-of-type, input[type="checkbox"] + label:last-of-type {
+
+input[type="radio"]+label:last-of-type,
+input[type="checkbox"]+label:last-of-type {
     margin-right: 0px;
 }
-input[type="radio"] + label, input[type="checkbox"] + label {
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
     position: relative;
     vertical-align: middle;
 }
-input[type="checkbox"]:checked + label.ty2:before {
+
+input[type="checkbox"]:checked+label.ty2:before {
     border-color: #000;
     background: #000 url("@/assets/images/icon/chk_8_3.png") no-repeat center 6px;
 }
-input[type="checkbox"] + label.ty2:before {
+
+input[type="checkbox"]+label.ty2:before {
     border-radius: 50%;
     vertical-align: -5px;
 }
-input[type="checkbox"] + label:before {
+
+input[type="checkbox"]+label:before {
     content: "";
     display: inline-block;
     border: 1px solid #DDD;
@@ -779,15 +1079,19 @@ input[type="checkbox"] + label:before {
     height: 18px;
     margin-right: 5px;
 }
+
 .article_payment .select_item_wrap .group_item .bx_item .area_rdo {
     position: absolute;
     right: 30px;
     top: 15px;
 }
+
 .article_payment .select_item_wrap .group_item .bx_item .area_rdo span {
     margin-left: 10px;
 }
-input[type="radio"], input[type="checkbox"] {
+
+input[type="radio"],
+input[type="checkbox"] {
     position: relative;
     top: 0;
     left: 0;
@@ -800,11 +1104,13 @@ input[type="radio"], input[type="checkbox"] {
     vertical-align: middle;
     border: none 0;
 }
-input[type="radio"]:checked + label:before {
+
+input[type="radio"]:checked+label:before {
     border-color: #000;
     background: #fff url("@/assets/images/icon/rad_12.png") no-repeat center center;
 }
-input[type="radio"] + label:before {
+
+input[type="radio"]+label:before {
     content: "";
     display: inline-block;
     width: 18px;
@@ -815,41 +1121,51 @@ input[type="radio"] + label:before {
     border-radius: 50%;
     vertical-align: -5px;
 }
+
 .benifit_infor_wrap {
     padding: 30px;
 }
+
 .benifit_infor_wrap .mCustomScrollbar {
     height: 170px;
     padding-right: 18px;
 }
+
 .mCSB_container {
     overflow: hidden;
     width: auto;
     height: auto;
 }
+
 .benifit_infor_wrap dl {
     position: relative;
     margin-top: 6px;
 }
+
 .benifit_infor_wrap dt {
     padding-right: 5px;
     box-sizing: border-box;
 }
+
 .benifit_infor_wrap dt {
     float: left;
     width: 95px;
     font-size: 11px;
 }
+
 .benifit_infor_wrap dt img {
     max-width: 100%;
 }
+
 .benifit_infor_wrap dt img {
     vertical-align: top;
 }
+
 img {
     overflow-clip-margin: content-box;
     overflow: clip;
 }
+
 .benifit_infor_wrap dd {
     float: left;
     width: calc(100% - 95px);
@@ -857,6 +1173,7 @@ img {
     font-size: 11px;
     color: #666;
 }
+
 .benifit_infor_wrap dd strong {
     color: #000;
 }
@@ -868,16 +1185,20 @@ img {
     bottom: 0;
     background-color: #414141;
 }
+
 .payment_sum_wrap dl:first-child {
     border-top: none;
 }
+
 .payment_sum_wrap dl {
     padding: 25px 30px;
     border-top: 1px solid rgba(255, 255, 255, .2);
 }
+
 dt {
     display: block;
 }
+
 dd {
     display: block;
     margin-inline-start: 40px;
@@ -899,6 +1220,7 @@ dd {
     font-size: 13px;
     color: #FFF;
 }
+
 .payment_sum_wrap dl dd strong {
     display: inline-block;
     line-height: 25px;
@@ -908,6 +1230,7 @@ dd {
     font-weight: bold;
     vertical-align: bottom;
 }
+
 .payment_sum_wrap .btn_confirm {
     display: block;
     border-radius: 0;
@@ -915,6 +1238,7 @@ dd {
     line-height: 64px;
     font-size: 17px;
 }
+
 .btn_col1 {
     box-sizing: border-box;
     border: 1px solid #FF243E;
@@ -923,14 +1247,21 @@ dd {
     vertical-align: middle;
     background-color: #FF243E;
 }
-a, a:link, a:visited, a:active, a:hover {
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
 dd {
     display: block;
     margin-inline-start: 40px;
 }
+
 dl {
     display: block;
     margin-block-start: 1em;
@@ -938,16 +1269,40 @@ dl {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+fieldset,
+ul,
+ol,
+dl,
+dt,
+dd,
+p,
+figure {
     margin: 0;
 }
-.mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical, .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical {
+
+.mCSB_outside+.mCS-minimal.mCSB_scrollTools_vertical,
+.mCSB_outside+.mCS-minimal-dark.mCSB_scrollTools_vertical {
     right: 0;
     margin: 12px 0;
 }
-.mCSB_scrollTools, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonLeft, .mCSB_scrollTools .mCSB_buttonRight {
+
+.mCSB_scrollTools,
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown,
+.mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_scrollTools .mCSB_buttonRight {
     transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
 }
+
 .mCSB_scrollTools {
     position: absolute;
     width: 16px;
@@ -957,6 +1312,7 @@ body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
     right: 0;
     bottom: 0;
 }
+
 .mCSB_scrollTools .mCSB_draggerContainer {
     position: absolute;
     top: 0;
@@ -965,11 +1321,13 @@ body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
     right: 0;
     height: auto;
 }
+
 .mCSB_scrollTools .mCSB_dragger {
     cursor: pointer;
     width: 100%;
     z-index: 1;
 }
+
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     position: relative;
     width: 4px;
@@ -979,14 +1337,96 @@ body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
     text-align: center;
 }
 
-.mCS-minimal.mCSB_scrollTools .mCSB_draggerRail, .mCS-minimal-dark.mCSB_scrollTools .mCSB_draggerRail {
+.mCS-minimal.mCSB_scrollTools .mCSB_draggerRail,
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_draggerRail {
     background-color: transparent;
 }
+
 .mCSB_scrollTools .mCSB_draggerRail {
     width: 2px;
     height: 100%;
     margin: 0 auto;
     border-radius: 16px;
+}
+
+.ic_grade.gr_12:before {
+    background: #e9b630 url("@/assets/images/common/grade_12.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_15:before {
+    background: #e9b630 url("@/assets/images/common/grade_15.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_18:before {
+    background: #e9b630 url("@/assets/images/common/grade_18.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_all:before {
+    background: #e9b630 url("@/assets/images/common/grade_all.png") 0 0 no-repeat;
+    background-size: 100%;
+}
+.ic_grade.gr_all:before, .ic_grade.gr_12:before, .ic_grade.gr_15:before, .ic_grade.gr_18:before, .ic_grade.gr_non:before, .ic_grade:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+}
+.ic_grade:before {
+    margin-left: -1px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFF;
+    white-space: nowrap;
+}
+.ic_grade.gr_12:before {
+    content: "12";
+    font-family: "Roboto";
+}
+.ic_grade.gr_15:before {
+    content: "12";
+    font-family: "Roboto";
+}
+.ic_grade.gr_18:before {
+    content: "12";
+    font-family: "Roboto";
+}
+.ic_grade.gr_all:before {
+    content: "12";
+    font-family: "Roboto";
+}
+.article_sum_infor .movie_infor .tit .ic_grade {
+    margin-top: -3px;
+}
+.ic_grade.gr_12 {
+    background-color: transparent;
+}
+.ic_grade {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    font-size: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.wrap_reserve .section_step_con .article .group_top {
+    overflow: hidden;
+    position: relative;
+    height: 55px;
+    line-height: 55px;
+    border-right: 1px solid #222;
+    text-align: center;
+    background-color: #000;
+}
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 </style>
