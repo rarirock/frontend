@@ -80,7 +80,7 @@
                   <a href="#">영화</a>
                   <ul class="dropdown">
                     <li><a href="#">홈</a></li>
-                    <li><a href="#">현재상영작</a></li>
+                    <li><router-link to="/movie-list/current">현재상영작</router-link></li>
                     <li><a href="#">상영예정작</a></li>
                   </ul>
                 </li>
