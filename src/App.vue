@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <!-- 테스트용 nav 추후 삭제예정 -->
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/movie-detail/info">movie-detail</router-link>
+    </nav>
     <!-- 본문(main/section) -->
     <router-view />
     <!-- footerCom : 꼬리말 -->
