@@ -14,11 +14,6 @@
         </div>
 
 
-        <!-- pop up 팝업 좌석 , seat -->
-        <div v-if="showSelectMoviePopup">
-            <SeatPopup></SeatPopup>
-        </div>
-
 
         <!-- 좌석 예약 페이지 -->
         <div v-if="showSelectSeat">
@@ -37,8 +32,7 @@
 
 <script>
 import NavBlack from '@/components/NavBlack.vue'
-import SeatPopup from '@/components/reservation/SeatPopup.vue'
-import SelectMovie from '@/components/reservation/SelectMovie.vue'
+import SelectMovie from '@/components/reservation/SelectMovieTime.vue'
 import SeatResevation from '@/components/reservation/SeatReservation.vue'
 import PaymentView from '@/components/reservation/PaymentView.vue'
 import custom from '@/assets/js/custom.js'
@@ -47,7 +41,6 @@ export default {
     components: {
         NavBlack,
         SelectMovie,
-        SeatPopup,
         SeatResevation,
         PaymentView,
     },
@@ -58,7 +51,6 @@ export default {
     data() {
         return {
             showSelectMovie: true,
-            showSelectMoviePopup: false,
             showSelectSeat: false,
             showPayment: false,
         }
