@@ -563,29 +563,7 @@ strong {
     border-bottom: 1px solid #DDD;
 }
 
-dl {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
 
-.article_sum_infor dl.dlist_infor dt {
-    clear: both;
-    float: left;
-    min-width: 40px;
-    margin-bottom: 7px;
-    font-size: 11px;
-}
-
-.article_sum_infor dl.dlist_infor dd {
-    float: left;
-    margin-bottom: 7px;
-    font-size: 11px;
-    width: 200px;
-    word-break: keep-all;
-}
 
 .article_sum_infor .addprodlistwrap {
     position: relative;
@@ -690,10 +668,6 @@ dl {
     background-color: #FFF;
 }
 
-.wrap_reserve .section_step_con .article .group_top .tit {
-    font-size: 18px;
-    color: #FFF;
-}
 
 .wrap_reserve .section_step_con .article .group_top .btn_txt_reset {
     position: absolute;
@@ -740,15 +714,7 @@ h3 {
     direction: ltr;
 }
 
-.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
-    margin-right: 0;
-}
 
-.mCSB_container {
-    overflow: hidden;
-    width: auto;
-    height: auto;
-}
 
 .group_discount {
     padding: 0 18px;
@@ -1131,11 +1097,6 @@ input[type="radio"]+label:before {
     padding-right: 18px;
 }
 
-.mCSB_container {
-    overflow: hidden;
-    width: auto;
-    height: auto;
-}
 
 .benifit_infor_wrap dl {
     position: relative;

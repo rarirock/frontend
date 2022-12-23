@@ -1,54 +1,52 @@
 <template>
     <div>
-        <div >
-            <div  id="contents" class="contents_full contents_reserve">
-                <div  class="wrap_reserve">
-                    <h2  class="hidden">예매하기</h2>
-                    <div  class="section_step_tit">
-                        <ul >
-                            <li  class="active step01"><a 
-                                    href="#reserveStep01"><strong  class="tit"><span
-                                            >01</span><br >상영시간</strong>
-                                    <div  class="bx_con">
-                                        <dl >
-                                            <dt >선택한 영화 제목</dt>
-                                            <dd >아바타: 물의 길</dd>
-                                            <dt >선택한 상영관</dt>
-                                            <dd >노원 7관</dd>
-                                            <dt >선택한 상영 날짜</dt>
-                                            <dd >2022-12-20(화)</dd>
-                                            <dt >선택한 시간</dt>
-                                            <dd >16:45~20:07</dd>
+        <div>
+            <div id="contents" class="contents_full contents_reserve">
+                <div class="wrap_reserve">
+                    <h2 class="hidden">예매하기</h2>
+                    <div class="section_step_tit">
+                        <ul>
+                            <li class="active step01"><a href="#reserveStep01"><strong
+                                        class="tit"><span>01</span><br>상영시간</strong>
+                                    <div class="bx_con">
+                                        <dl>
+                                            <dt>선택한 영화 제목</dt>
+                                            <dd>아바타: 물의 길</dd>
+                                            <dt>선택한 상영관</dt>
+                                            <dd>노원 7관</dd>
+                                            <dt>선택한 상영 날짜</dt>
+                                            <dd>2022-12-20(화)</dd>
+                                            <dt>선택한 시간</dt>
+                                            <dd>16:45~20:07</dd>
                                         </dl>
                                     </div>
                                 </a></li>
-                            <li  class="disabled"><a 
-                                    style="cursor: default;"><strong  class="tit"><span
-                                            >02</span><br >인원/좌석</strong></a></li>
-                            <li  class="disabled"><a 
-                                    style="cursor: default;"><strong  class="tit"><span
-                                            >03</span><br >결제</strong></a></li>
-                            <li  class="disabled"><a 
-                                    style="cursor: default;"><strong  class="tit"><span
-                                            >04</span><br >결제완료</strong></a></li>
+                            <li class="disabled"><a style="cursor: default;"><strong
+                                        class="tit"><span>02</span><br>인원/좌석</strong></a></li>
+                            <li class="disabled"><a style="cursor: default;"><strong
+                                        class="tit"><span>03</span><br>결제</strong></a></li>
+                            <li class="disabled"><a style="cursor: default;"><strong
+                                        class="tit"><span>04</span><br>결제완료</strong></a></li>
                         </ul>
                     </div>
-                    <div  id="reserveStep01" class="section_step_con step01 active">
-                        <h3  class="hidden">상영시간</h3>
-                        <div  class="article article_cinema area__movingbar litype2">
-                            <div  class="group_top">
-                                <h4  class="tit">노원</h4>
+                    <div id="reserveStep01" class="section_step_con step01 active">
+                        <h3 class="hidden">상영시간</h3>
+                        <div class="article article_cinema area__movingbar litype2">
+                            <div class="group_top">
+                                <h4 class="tit">{{ selectTheater.location }}</h4>
                             </div>
-                            <div  class="inner">
-                                <ul  class="tab_wrap outer actionmovingbar">
-                                    <li  class="active"><button  type="button"
-                                            class="tab_tit" style="width: 50%; left: 0%;"><span
-                                                >전체</span></button>
-                                        <div  class="tab_con">
-                                            <h5  class="hidden">전체</h5>
-                                            <div  class="cinema_select_wrap cinemaSelect basicCinema" style="overflow:auto;">
-                                                <ul >
-                                                    <li  class="depth1"><a 
+                            <div class="inner">
+                                <ul class="tab_wrap outer actionmovingbar">
+                                    <li class="active">
+                                        <span class="tab_tit" style="width: 50%; left: 0%; text-align: center;">
+                                            전체
+                                        </span>
+                                        <div class="tab_con">
+                                            <h5 class="hidden">전체</h5>
+                                            <div class="cinema_select_wrap cinemaSelect basicCinema"
+                                                style="overflow:auto;">
+                                                <ul>
+                                                    <!-- <li  class="depth1"><a 
                                                             href="#none">MY 영화관<em >(0)</em></a>
                                                         <div  class="depth2">
                                                             <div  data-mcs-theme="minimal-dark"
@@ -88,93 +86,73 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </li>
-                                                    <li  class="depth1 active"><a 
-                                                            href="#none">서울</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">경기/인천</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">충청/대전</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">전라/광주</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">경북/대구</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">경남/부산/울산</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">강원</a></li>
-                                                    <li  class="depth1"><a 
-                                                            href="#none">제주</a></li>
+                                                    </li> -->
+                                                    <div v-for="(data, num) in theater" :key="num">
+                                                        <li class="depth1"
+                                                            :class="{ 'active': selectTheater.cinemaName == data.cinemaName }">
+                                                            <a href="#none" @click="getTheater(data)">{{ data.cinemaName
+                                                            }}</a></li>
+                                                    </div>
+                                                    <!-- <li class="depth1 active"><a href="#none">서울</a></li>
+                                                    <li class="depth1"><a href="#none">경기/인천</a></li>
+                                                    <li class="depth1"><a href="#none">충청/대전</a></li>
+                                                    <li class="depth1"><a href="#none">전라/광주</a></li>
+                                                    <li class="depth1"><a href="#none">경북/대구</a></li>
+                                                    <li class="depth1"><a href="#none">경남/부산/울산</a></li>
+                                                    <li class="depth1"><a href="#none">강원</a></li>
+                                                    <li class="depth1"><a href="#none">제주</a></li> -->
                                                 </ul>
                                             </div>
                                         </div>
                                     </li>
-                                    <li  class="wrap_nav_underline"><span 
-                                            class="nav_underline"></span></li>
+                                    <li class="wrap_nav_underline"><span class="nav_underline"></span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div  class="article article_movie">
-                            <div  class="group_top">
-                                <h4  class="tit movie_name">아바타: 물의 길</h4>
+                        <div class="article article_movie">
+                            <div class="group_top">
+                                <h4 class="tit movie_name">{{ themaOfMovie.mTitle }}</h4>
                             </div>
-                            <div  class="inner">
-                                <div  class="list_filter"><select 
-                                        title="영화 정렬 방법 선택">
-                                        <option  value="A">예매순</option>
-                                        <option  value="B">관객순</option>
-                                        <option  value="C">평점순</option>
-                                        <option  value="D">예정작</option>
+                            <div class="inner">
+                                <div class="list_filter"><select title="영화 정렬 방법 선택">
+                                        <option value="A">예매순</option>
+                                        <option value="B">관객순</option>
+                                        <option value="C">평점순</option>
+                                        <option value="D">예정작</option>
                                     </select>
-                                    <div  class="bx_btn_view">
+                                    <div class="bx_btn_view">
                                     </div>
                                 </div>
-                                <div  class="movie_select_wrap list movieSelect">
-                                    <div  data-mcs-theme="minimal-dark"
+                                <div class="movie_select_wrap list movieSelect">
+                                    <div data-mcs-theme="minimal-dark"
                                         class="mCustomScrollbar movieScroll _mCS_9 mCS-autoHide"
                                         style="position: relative; overflow: visible;">
-                                        <div  id="mCSB_9" tabindex="0"
+                                        <div id="mCSB_9" tabindex="0"
                                             class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
                                             style="max-height: none; overflow:auto;">
-                                            <div  id="mCSB_9_container" dir="ltr"
-                                                class="mCSB_container" style="position: relative; top: 0px; left: 0px;">
-                                                <ul >
-                                                    <li  class="active"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >1</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/18755_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_12">12세
-                                                                        관람가</span><strong 
-                                                                        class="tit">아바타: 물의 길</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >80.0%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.5</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.14</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
+                                            <div id="mCSB_9_container" dir="ltr" class="mCSB_container"
+                                                style="position: relative; top: 0px; left: 0px;">
+                                                <ul>
+
+                                                    <li :class="{ 'active': themaOfMovie.mTitle == data.mTitle }"
+                                                        v-for="(data, index) in ScreeningList" :key="index"
+                                                        @click="getMovie(data)"><a href="#none">
+
+                                                            <div class="group_infor">
+                                                                <div class="bx_tit">
+                                                                    <span
+                                                                        :class="{ 'ic_grade gr_12': data.mage == 12, 'ic_grade gr_15': data.mage == 15, 'ic_grade gr_18': data.mage == 18, 'ic_grade gr_all': data.mage == 'all' }"></span>
+
+                                                                    <strong class="tit">{{ data.mtitle }}</strong>
+                                                                </div>
+                                                                <dl>
+
+                                                                    <dd><strong class="expired"></strong></dd>
                                                                 </dl>
                                                             </div>
                                                         </a></li>
-                                                        <!-- <li  class="active"><a 
+
+                                                    <!-- <li  class="active"><a 
                                                             href="#none">
                                                             <div  class="bx_thm"><span
                                                                      class="rank"><span
@@ -209,497 +187,55 @@
                                                                 </dl>
                                                             </div>
                                                         </a></li> -->
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >2</strong></span><img
-                                                                    
+                                                    <!-- <li class="disabled"><a href="#none">
+                                                            <div class="bx_thm"><span class="rank"><span
+                                                                        class="hidden">순위</span><strong>2</strong></span><img
                                                                     src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19224_101_1.jpg"
                                                                     alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_12">12세
-                                                                        관람가</span><strong 
-                                                                        class="tit">영웅</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >12.3%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >0.0</strong></span>
+                                                            <div class="group_infor">
+                                                                <div class="bx_tit"><span class="ic_grade gr_12">12세
+                                                                        관람가</span><strong class="tit">영웅</strong></div>
+                                                                <dl>
+                                                                    <dt>예매율</dt>
+                                                                    <dd><strong>12.3%</strong></dd>
+                                                                    <dt class="side"><span
+                                                                            class="txt_ic_score ty1"><em>평점</em></span>
+                                                                    </dt>
+                                                                    <dd><span
+                                                                            class="txt_ic_score ty1"><strong>0.0</strong></span>
                                                                     </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.21</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
+                                                                    <dt>개봉일</dt>
+                                                                    <dd>2022.12.21</dd>
+                                                                    <dt class="side day">d -day</dt>
+                                                                    <dd><strong class="expired"></strong></dd>
                                                                 </dl>
                                                             </div>
-                                                        </a></li>
-                                                    <li ><a  href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >3</strong></span><img
-                                                                    
+                                                        </a></li> -->
+                                                    <!-- <li><a href="#none">
+                                                            <div class="bx_thm"><span class="rank"><span
+                                                                        class="hidden">순위</span><strong>3</strong></span><img
                                                                     src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202211/19162_101_1.jpg"
                                                                     alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_15">15세
-                                                                        관람가</span><strong 
-                                                                        class="tit">올빼미</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >1.7%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.7</strong></span>
+                                                            <div class="group_infor">
+                                                                <div class="bx_tit"><span class="ic_grade gr_15">15세
+                                                                        관람가</span><strong class="tit">올빼미</strong></div>
+                                                                <dl>
+                                                                    <dt>예매율</dt>
+                                                                    <dd><strong>1.7%</strong></dd>
+                                                                    <dt class="side"><span
+                                                                            class="txt_ic_score ty1"><em>평점</em></span>
+                                                                    </dt>
+                                                                    <dd><span
+                                                                            class="txt_ic_score ty1"><strong>9.7</strong></span>
                                                                     </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.11.23</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
+                                                                    <dt>개봉일</dt>
+                                                                    <dd>2022.11.23</dd>
+                                                                    <dt class="side day">d -day</dt>
+                                                                    <dd><strong class="expired"></strong></dd>
                                                                 </dl>
                                                             </div>
-                                                        </a></li>
-                                                    <li ><a  href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >4</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202211/19256_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_12">12세
-                                                                        관람가</span><strong 
-                                                                        class="tit">오늘 밤, 세계에서 이 사랑이 사라진다 해도</strong>
-                                                                </div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >1.2%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.2</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.11.30</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li ><a  href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >5</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19300_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_all">0세
-                                                                        관람가</span><strong 
-                                                                        class="tit">신비아파트 극장판 차원도깨비와 7개의 세계</strong>
-                                                                </div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.9%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.8</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.14</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >6</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19330_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_15">15세
-                                                                        관람가</span><strong 
-                                                                        class="tit">젠틀맨</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.3%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >0.0</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.28</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >7</strong></span><img
-                                                                    
-                                                                    src="https://www.lottecinema.co.kr/LCHS/Image/Thum/ticket_no_image01.gif"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_all">0세
-                                                                        관람가</span><strong 
-                                                                        class="tit">[대관]</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.3%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >0.0</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2050.01.01</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li ><a  href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >8</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19239_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_all">0세
-                                                                        관람가</span><strong 
-                                                                        class="tit">극장판 뽀로로와 친구들: 바이러스를 없애줘!</strong>
-                                                                </div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.2%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.6</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.01</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >9</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202211/19230_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_12">12세
-                                                                        관람가</span><strong 
-                                                                        class="tit">탄생</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.2%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.1</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.11.30</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >10</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19262_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_all">0세
-                                                                        관람가</span><strong 
-                                                                        class="tit">핑크퐁 시네마 콘서트 2: 원더스타 콘서트 대작전</strong>
-                                                                </div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.1%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >0.0</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.21</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >11</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19325_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_all">0세
-                                                                        관람가</span><strong 
-                                                                        class="tit">눈의 여왕5: 스노우 프린세스와 미러랜드의 비밀</strong>
-                                                                </div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.1%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >0.0</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.22</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >12</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19290_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_all">0세
-                                                                        관람가</span><strong 
-                                                                        class="tit">스페이스 키드: 우주에서 살아남기</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.1%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >9.4</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.12.07</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >13</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202210/18983_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_15">15세
-                                                                        관람가</span><strong 
-                                                                        class="tit">에브리씽 에브리웨어 올 앳 원스</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.0%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >8.7</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.10.12</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >14</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202301/19328_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_15">15세
-                                                                        관람가</span><strong 
-                                                                        class="tit">3000년의 기다림</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.0%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >0.0</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2023.01.04</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
-                                                    <li  class="disabled"><a 
-                                                            href="#none">
-                                                            <div  class="bx_thm"><span
-                                                                     class="rank"><span
-                                                                        
-                                                                        class="hidden">순위</span><strong
-                                                                        >15</strong></span><img
-                                                                    
-                                                                    src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202211/19073_101_1.jpg"
-                                                                    alt="포스터" class="mCS_img_loaded"></div>
-                                                            <div  class="group_infor">
-                                                                <div  class="bx_tit"><span
-                                                                         class="ic_grade gr_12">12세
-                                                                        관람가</span><strong 
-                                                                        class="tit">원피스 필름 레드</strong></div>
-                                                                <dl >
-                                                                    <dt >예매율</dt>
-                                                                    <dd ><strong
-                                                                            >0.0%</strong></dd>
-                                                                    <dt  class="side"><span
-                                                                            
-                                                                            class="txt_ic_score ty1"><em
-                                                                                >평점</em></span></dt>
-                                                                    <dd ><span 
-                                                                            class="txt_ic_score ty1"><strong
-                                                                                >8.9</strong></span>
-                                                                    </dd>
-                                                                    <dt >개봉일</dt>
-                                                                    <dd >2022.11.30</dd>
-                                                                    <dt  class="side day">d -day</dt>
-                                                                    <dd ><strong 
-                                                                            class="expired"></strong></dd>
-                                                                </dl>
-                                                            </div>
-                                                        </a></li>
+                                                        </a></li> -->
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -720,166 +256,140 @@
                                 </div>
                             </div>
                         </div>
-                        <div  class="article article_time area__movingbar litype6">
-                            <div  class="group_top">
-                                <h4  class="tit">2022-12-20(화)</h4>
+                        <div class="article article_time area__movingbar litype6">
+                            <div class="group_top">
+                                <h4 class="tit">{{ nowDate }}</h4>
                             </div>
-                            <div  class="inner">
-                                <div  class="date_select_wrap dateReserveWrap">
-                                    <div  class="slide_wrap slide_reserve_date">
-                                        <ul  class="owl-carousel owl-loaded owl-drag">
-                                            <div  class="owl-stage-outer">
-                                                <div  class="owl-carousel owl-stage"
+                            <div class="inner">
+                                <div class="date_select_wrap dateReserveWrap">
+                                    <div class="slide_wrap slide_reserve_date">
+                                        <ul class="owl-carousel owl-loaded owl-drag">
+                                            <div class="owl-stage-outer">
+                                                <div class="owl-carousel owl-stage"
                                                     style="transform: translate3d(0px, 0px, 0px); transition: all 0.4s ease 0s; width: 420px;">
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><strong 
-                                                                class="month">12월</strong><span 
-                                                                class="date"><label ><input
-                                                                         type="radio"
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><strong class="month">{{ mm }}월</strong><span
+                                                                class="date"><label><input type="radio"
                                                                         name="radioDate1" data-displayyn="Y"
-                                                                        data-playdate="2022-12-20" data-isplaydate="Y"
-                                                                        data-playweek="오늘" checked="checked"><strong
-                                                                        >20</strong><em
-                                                                        >오늘</em></label></span></li>
+                                                                        :data-playdate="nowDate" data-isplaydate="Y"
+                                                                        data-playweek="오늘" checked="checked"><strong>{{
+                                                                                dd
+                                                                        }}</strong><em>오늘</em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date"><label ><input
-                                                                         type="radio"
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date"><label><input type="radio"
                                                                         name="radioDate1" data-displayyn="Y"
                                                                         data-playdate="2022-12-21" data-isplaydate="Y"
-                                                                        data-playweek="수"><strong
-                                                                        >21</strong><em
-                                                                        >수</em></label></span></li>
+                                                                        data-playweek="수"><strong>{{ dd + 1
+                                                                        }}</strong><em>{{ }}</em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date"><label ><input
-                                                                         type="radio"
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date"><label><input type="radio"
                                                                         name="radioDate1" data-displayyn="Y"
                                                                         data-playdate="2022-12-22" data-isplaydate="Y"
-                                                                        data-playweek="목"><strong
-                                                                        >22</strong><em
-                                                                        >목</em></label></span></li>
+                                                                        data-playweek="목"><strong>{{ dd + 2
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date"><label ><input
-                                                                         type="radio"
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date"><label><input type="radio"
                                                                         name="radioDate1" data-displayyn="Y"
                                                                         data-playdate="2022-12-23" data-isplaydate="Y"
-                                                                        data-playweek="금"><strong
-                                                                        >23</strong><em
-                                                                        >금</em></label></span></li>
+                                                                        data-playweek="금"><strong>{{ dd + 3
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date sat"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="Y"
-                                                                        data-playdate="2022-12-24" data-isplaydate="Y"
-                                                                        data-playweek="토"><strong
-                                                                        >24</strong><em
-                                                                        >토</em></label></span></li>
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date sat"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="Y" data-playdate="2022-12-24"
+                                                                        data-isplaydate="Y" data-playweek="토"><strong>{{
+                                                                                dd + 4
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date sun"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="Y"
-                                                                        data-playdate="2022-12-25" data-isplaydate="Y"
-                                                                        data-playweek="일"><strong
-                                                                        >25</strong><em
-                                                                        >일</em></label></span></li>
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date sun"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="Y" data-playdate="2022-12-25"
+                                                                        data-isplaydate="Y" data-playweek="일"><strong>{{
+                                                                                dd + 5
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date disabled"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="N"
-                                                                        data-playdate="2022-12-26" data-isplaydate="Y"
-                                                                        data-playweek="월"><strong
-                                                                        >26</strong><em
-                                                                        >월</em></label></span></li>
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date disabled"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="N" data-playdate="2022-12-26"
+                                                                        data-isplaydate="Y" data-playweek="월"><strong>{{
+                                                                                dd + 6
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item active"
-                                                        style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date disabled"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="N"
-                                                                        data-playdate="2022-12-27" data-isplaydate="Y"
-                                                                        data-playweek="화"><strong
-                                                                        >27</strong><em
-                                                                        >화</em></label></span></li>
+                                                    <div class="owl-item active" style="width: 52.5px;">
+                                                        <li class="item"><span class="date disabled"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="N" data-playdate="2022-12-27"
+                                                                        data-isplaydate="Y" data-playweek="화"><strong>{{
+                                                                                dd + 7
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item" style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date disabled"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="N"
-                                                                        data-playdate="2022-12-28" data-isplaydate="Y"
-                                                                        data-playweek="수"><strong
-                                                                        >28</strong><em
-                                                                        >수</em></label></span></li>
+                                                    <div class="owl-item" style="width: 52.5px;">
+                                                        <li class="item"><span class="date disabled"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="N" data-playdate="2022-12-28"
+                                                                        data-isplaydate="Y" data-playweek="수"><strong>{{
+                                                                                dd + 8
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item" style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date disabled"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="N"
-                                                                        data-playdate="2022-12-29" data-isplaydate="Y"
-                                                                        data-playweek="목"><strong
-                                                                        >29</strong><em
-                                                                        >목</em></label></span></li>
+                                                    <div class="owl-item" style="width: 52.5px;">
+                                                        <li class="item"><span class="date disabled"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="N" data-playdate="2022-12-29"
+                                                                        data-isplaydate="Y" data-playweek="목"><strong>{{
+                                                                                dd + 9
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item" style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date disabled"><label ><input
-                                                                         type="radio"
-                                                                        name="radioDate1" data-displayyn="N"
-                                                                        data-playdate="2022-12-30" data-isplaydate="Y"
-                                                                        data-playweek="금"><strong
-                                                                        >30</strong><em
-                                                                        >금</em></label></span></li>
+                                                    <div class="owl-item" style="width: 52.5px;">
+                                                        <li class="item"><span class="date disabled"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="N" data-playdate="2022-12-30"
+                                                                        data-isplaydate="Y" data-playweek="금"><strong>{{
+                                                                                dd + 10
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item" style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date sat disabled"><label
-                                                                    ><input 
+                                                    <div class="owl-item" style="width: 52.5px;">
+                                                        <li class="item"><span class="date sat disabled"><label><input
                                                                         type="radio" name="radioDate1"
                                                                         data-displayyn="N" data-playdate="2022-12-31"
-                                                                        data-isplaydate="Y" data-playweek="토"><strong
-                                                                        >31</strong><em
-                                                                        >토</em></label></span></li>
+                                                                        data-isplaydate="Y" data-playweek="토"><strong>{{
+                                                                                dd + 11
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
-                                                    <div  class="owl-item" style="width: 52.5px;">
-                                                        <li  class="item"><strong 
-                                                                class="month">1월</strong><span 
-                                                                class="date sun disabled"><label
-                                                                    ><input 
-                                                                        type="radio" name="radioDate1"
-                                                                        data-displayyn="N" data-playdate="2023-01-01"
-                                                                        data-isplaydate="Y" data-playweek="일"><strong
-                                                                        >1</strong><em
-                                                                        >일</em></label></span></li>
-                                                    </div>
-                                                    <div  class="owl-item" style="width: 52.5px;">
-                                                        <li  class="item"><span 
-                                                                class="date disabled"><label ><input
-                                                                         type="radio"
+                                                    <div class="owl-item" style="width: 52.5px;">
+                                                        <li class="item"><strong class="month"></strong><span
+                                                                class="date sun disabled"><label><input type="radio"
                                                                         name="radioDate1" data-displayyn="N"
-                                                                        data-playdate="2023-01-02" data-isplaydate="N"
-                                                                        data-playweek="월"><strong
-                                                                        >2</strong><em
-                                                                        >월</em></label></span></li>
+                                                                        data-playdate="2023-01-01" data-isplaydate="Y"
+                                                                        data-playweek="일"><strong>{{ dd + 12
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
+                                                    </div>
+                                                    <div class="owl-item" style="width: 52.5px;">
+                                                        <li class="item"><span class="date disabled"><label><input
+                                                                        type="radio" name="radioDate1"
+                                                                        data-displayyn="N" data-playdate="2023-01-02"
+                                                                        data-isplaydate="N" data-playweek="월"><strong>{{
+                                                                                dd + 13
+                                                                        }}</strong><em></em></label></span>
+                                                        </li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -890,536 +400,463 @@
                                                      type="button" role="presentation"
                                                     class="owl-next"><span 
                                                         aria-label="Next">›</span></button></div>
-                                            <div  class="owl-dots disabled"></div> --> 
+                                            <div  class="owl-dots disabled"></div> -->
                                         </ul>
                                     </div>
                                 </div>
-                                <ul  class="tab_wrap outer sml actionmovingbar">
-                                    <li  class="active"><button  type="button"
-                                            class="tab_tit" style="width: 16.6667%; left: 0%;"><span
-                                                ></span></button>
-                                        <div  class="tab_con ty5">
-                                            <div  data-mcs-theme="minimal-dark"
+                                <ul class="tab_wrap outer sml actionmovingbar">
+                                    <li class="active"><button type="button" class="tab_tit"
+                                            style="width: 16.6667%; left: 0%;"><span></span></button>
+                                        <div class="tab_con ty5">
+                                            <div data-mcs-theme="minimal-dark"
                                                 class="timeScroll mCustomScrollbar _mCS_73 mCS-autoHide"
                                                 style="position: relative; overflow: auto;">
                                                 <div>
-                                                    <div  id="mCSB_73_container" dir="ltr"
-                                                        class="mCSB_container"
+                                                    <div id="mCSB_73_container" dir="ltr" class="mCSB_container"
                                                         style="position: relative; top: 0px; left: 0px; overflow: auto; ">
-                                                        <div  class="group_time_select">
-                                                            <div  class="time_select_tit"><span
-                                                                    
-                                                                    class="ic_grade gr_12">12</span><strong
-                                                                    >아바타: 물의 길</strong></div>
-                                                            <div  class="time_select_wrap timeSelect">
-                                                                <ul  class="list_hall">
-                                                                    <li >4D3D</li>
-                                                                    <li >수퍼 4D</li>
+                                                        <div class="group_time_select">
+                                                            <div class="time_select_tit"><span
+                                                                    class="ic_grade gr_12">12</span><strong>{{
+                                                                            themaOfMovie.mTitle
+                                                                    }}</strong></div>
+                                                                    <!-- 4D -->
+                                                            <div class="time_select_wrap timeSelect">
+                                                                <ul class="list_hall">
+                                                                    <li>4D3D</li>
+                                                                    <li>수퍼 4D</li>
                                                                 </ul>
-                                                                <ul  class="list_time">
-                                                                    <li  class="near"><a
-                                                                             role="button"
+                                                                <ul class="list_time">
+                                                                    <li class="near"><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>13:05</strong>
+                                                                                    <div class="tooltip">종료 16:27</div>
+                                                                                </dd>
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>5</strong> /
+                                                                                    93
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">7관
+                                                                                </dd>
+                                                                            </dl>
+                                                                        </a></li>
+                                                                    <li class="near active"><a role="button"
                                                                             href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >13:05</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 16:27</div>
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>16:45</strong>
+                                                                                    <div class="tooltip">종료 20:07</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >5</strong> /
-                                                                                    93 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">7관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>4</strong> /
+                                                                                    93
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">7관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li  class="near active"><a
-                                                                             role="button"
-                                                                            href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >16:45</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 20:07</div>
+                                                                    <li class="full disabled"><a role="button"
+                                                                            href="#none"><span class="txt_ntc">매진</span>
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>20:25</strong>
+                                                                                    <div class="tooltip">종료 23:47</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >4</strong> /
-                                                                                    93 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">7관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>매진</strong>
                                                                                 </dd>
-                                                                            </dl>
-                                                                        </a></li>
-                                                                    <li  class="full disabled"><a
-                                                                             role="button"
-                                                                            href="#none"><span 
-                                                                                class="txt_ntc">매진</span>
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >20:25</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 23:47</div>
-                                                                                </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >매진</strong>
-                                                                                </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">7관
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">7관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
                                                                 </ul>
                                                             </div>
-                                                            <div  class="time_select_wrap timeSelect">
-                                                                <ul  class="list_hall">
-                                                                    <li >2D</li>
+                                                            <!-- 2D -->
+                                                            <div class="time_select_wrap timeSelect">
+                                                                <ul class="list_hall">
+                                                                    <li>2D</li>
                                                                 </ul>
-                                                                <ul  class="list_time">
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >11:35</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 14:57</div>
+                                                                <ul class="list_time">
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>11:35</strong>
+                                                                                    <div class="tooltip">종료 14:57</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >208</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">2관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>208</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">2관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >12:10</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 15:32</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>12:10</strong>
+                                                                                    <div class="tooltip">종료 15:32</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >209</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">1관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>209</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">1관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >14:05</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 17:27</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>14:05</strong>
+                                                                                    <div class="tooltip">종료 17:27</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >182</strong>
-                                                                                    / 261 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">9관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>182</strong>
+                                                                                    / 261
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">9관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >15:15</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 18:37</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>15:15</strong>
+                                                                                    <div class="tooltip">종료 18:37</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >212</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">2관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>212</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">2관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >15:50</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 19:12</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>15:50</strong>
+                                                                                    <div class="tooltip">종료 19:12</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >203</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">1관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>203</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">1관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >17:45</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 21:07</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>17:45</strong>
+                                                                                    <div class="tooltip">종료 21:07</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >251</strong>
-                                                                                    / 261 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">9관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>251</strong>
+                                                                                    / 261
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">9관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >18:55</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 22:17</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>18:55</strong>
+                                                                                    <div class="tooltip">종료 22:17</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >182</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">2관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>182</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">2관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >19:40</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 23:02</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>19:40</strong>
+                                                                                    <div class="tooltip">종료 23:02</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >118</strong>
-                                                                                    / 129 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">3관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>118</strong>
+                                                                                    / 129
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">3관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >21:25</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 24:47</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>21:25</strong>
+                                                                                    <div class="tooltip">종료 24:47</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >255</strong>
-                                                                                    / 261 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">9관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>255</strong>
+                                                                                    / 261
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">9관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >22:35</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 25:57</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>22:35</strong>
+                                                                                    <div class="tooltip">종료 25:57</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >215</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">1관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>215</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">1관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >23:00</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 26:22</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>23:00</strong>
+                                                                                    <div class="tooltip">종료 26:22</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >224</strong>
-                                                                                    / 227 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">2관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>224</strong>
+                                                                                    / 227
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">2관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
                                                                 </ul>
                                                             </div>
-                                                            <div  class="time_select_wrap timeSelect">
-                                                                <ul  class="list_hall">
-                                                                    <li >3D</li>
+                                                            <!-- 3D -->
+                                                            <div class="time_select_wrap timeSelect">
+                                                                <ul class="list_hall">
+                                                                    <li>3D</li>
                                                                 </ul>
-                                                                <ul  class="list_time">
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >11:00</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 14:22</div>
+                                                                <ul class="list_time">
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>11:00</strong>
+                                                                                    <div class="tooltip">종료 14:22</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >235</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">5관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>235</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">5관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >13:25</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 16:47</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>13:25</strong>
+                                                                                    <div class="tooltip">종료 16:47</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >242</strong>
-                                                                                    / 261 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">4관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>242</strong>
+                                                                                    / 261
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">4관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >14:40</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 18:02</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>14:40</strong>
+                                                                                    <div class="tooltip">종료 18:02</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >234</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">5관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>234</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">5관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >17:05</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 20:27</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>17:05</strong>
+                                                                                    <div class="tooltip">종료 20:27</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >249</strong>
-                                                                                    / 261 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">4관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>249</strong>
+                                                                                    / 261
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">4관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >18:20</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 21:42</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>18:20</strong>
+                                                                                    <div class="tooltip">종료 21:42</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >246</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">5관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>246</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">5관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >20:45</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 24:07</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>20:45</strong>
+                                                                                    <div class="tooltip">종료 24:07</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >244</strong>
-                                                                                    / 261 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">4관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>244</strong>
+                                                                                    / 261
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">4관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >22:00</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 25:22</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>22:00</strong>
+                                                                                    <div class="tooltip">종료 25:22</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >254</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">5관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>254</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">5관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
                                                                 </ul>
                                                             </div>
-                                                            <div  class="time_select_wrap timeSelect">
-                                                                <ul  class="list_hall">
-                                                                    <li >2D</li>
-                                                                    <li >4K</li>
+                                                            <!-- 2D 4K -->
+                                                            <div class="time_select_wrap timeSelect">
+                                                                <ul class="list_hall">
+                                                                    <li>2D</li>
+                                                                    <li>4K</li>
                                                                 </ul>
-                                                                <ul  class="list_time">
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >12:45</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 16:07</div>
+                                                                <ul class="list_time">
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>12:45</strong>
+                                                                                    <div class="tooltip">종료 16:07</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >173</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">8관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>173</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">8관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >16:25</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 19:47</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>16:25</strong>
+                                                                                    <div class="tooltip">종료 19:47</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >200</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">8관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>200</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">8관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
-                                                                    <li ><a 
-                                                                            role="button" href="#none">
-                                                                            <dl >
-                                                                                <dt >상영시간</dt>
-                                                                                <dd  class="time">
-                                                                                    <strong
-                                                                                        >20:05</strong>
-                                                                                    <div 
-                                                                                        class="tooltip">종료 23:27</div>
+                                                                    <li><a role="button" href="#none">
+                                                                            <dl>
+                                                                                <dt>상영시간</dt>
+                                                                                <dd class="time">
+                                                                                    <strong>20:05</strong>
+                                                                                    <div class="tooltip">종료 23:27</div>
                                                                                 </dd>
-                                                                                <dt >잔여석</dt>
-                                                                                <dd  class="seat">
-                                                                                    <strong
-                                                                                        >209</strong>
-                                                                                    / 256 </dd>
-                                                                                <dt >상영관</dt>
-                                                                                <dd  class="hall">8관
+                                                                                <dt>잔여석</dt>
+                                                                                <dd class="seat">
+                                                                                    <strong>209</strong>
+                                                                                    / 256
+                                                                                </dd>
+                                                                                <dt>상영관</dt>
+                                                                                <dd class="hall">8관
                                                                                 </dd>
                                                                             </dl>
                                                                         </a></li>
@@ -1444,12 +881,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li ><span  type="button" class="tab_tit"
-                                            style="width: 83%; left: 16.6667%;"></span>
-                                        
+                                    <li><span type="button" class="tab_tit" style="width: 83%; left: 16.6667%;"></span>
+
                                     </li>
-                                    <li  class="wrap_nav_underline"><span 
-                                            class="nav_underline"></span></li>
+                                    <li class="wrap_nav_underline"><span class="nav_underline"></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -1464,23 +899,106 @@
 /* eslint-disable */
 export default {
     mounted() {
-  // 캐러셀 초기화 실행 , jquery 사용
-  $(".owl-stage").owlCarousel({
-    autoplay: false, // 자동으로 이미지가 돌아가게 할 것인지
-    smartSpeed:500, // 이미지 변경속도
-    nav: true,  // 메뉴
-    items:8, // 초기화면에 표시할 이미지 개수
-    loop:false  // 마지막 사진이 오면 처음 사진으로 돌아가게 할 것인지
-  });
-},
+
+
+        // 캐러셀 초기화 실행 , jquery 사용
+        $(".owl-stage").owlCarousel({
+            autoplay: false, // 자동으로 이미지가 돌아가게 할 것인지
+            smartSpeed: 500, // 이미지 변경속도
+            nav: true,  // 메뉴
+            items: 8, // 초기화면에 표시할 이미지 개수
+            loop: false  // 마지막 사진이 오면 처음 사진으로 돌아가게 할 것인지
+        });
+
+        this.setTime();
+    },
+    data() {
+        return {
+            ScreeningList: [ //상영중인 데이터 목록
+                {
+                    "mcumulativeAudience": 3202020, // 해당 영화 관람객 수
+                    "mposter": null, // 포스터 BLOB형태로 저장되지만, 현재 DB에 없어서 null출력
+                    "audiencesRate": 9.5, // 관객들이 내린 평점 평균 (평점/관객수)
+                    "rank": 1, // 현재 상영중인 영화들을 기준으로, 관람객수로 내린 영화의 순위
+                    "mcriticsRate": 7.0, // 평론가 평점
+                    "mTitle": "아바타 : 물의 길", // 영화 제목
+                    "ticketingPer": 46.21, // 전체영화대비 관람객수 비율
+                    "mage": 12 // 상영등급
+                },
+                {
+                    "mcumulativeAudience": 2952297,
+                    "mposter": null,
+                    "audiencesRate": 9.7,
+                    "rank": 2,
+                    "mcriticsRate": 8.1,
+                    "mTitle": "올빼미",
+                    "ticketingPer": 42.61,
+                    "mage": 15
+                },
+                {
+                    "mcumulativeAudience": 378702,
+                    "mposter": null,
+                    "audiencesRate": 9.2,
+                    "rank": 3,
+                    "mcriticsRate": 8.5,
+                    "mTitle": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+                    "ticketingPer": 5.47,
+                    "mage": "all"
+                }
+            ]
+            ,
+            selectTheater: {},  // 지역 선택
+            themaOfMovie: {},   // 영화 선택
+
+            theater: [{ "cinemaName": "서울", }, { "cinemaName": "부산" }, { "cinemaName": "인천" }, { "cinemaName": "대구" }, { "cinemaName": "울산" }, { "cinemaName": "거제" }],
+
+            nowDate: "",
+            yy: "",
+            mm: "",
+            dd: "",
+
+            thName: [
+                { "thId": 1, "mTitle": "아바타 : 물의 길", "mAge": 1, "thType": "2D", "thDate": 221222, "cineTime": 930 , "totalSeat": 140 , "leftSeat": 114 },
+            { "thId": 1 , "mTitle": "아바타 : 물의 길", "mAge": 1 , "thType": "2D", "thDate": 221222 , "cineTime": 1200, "totalSeat": 140, "leftSeat": 114 },
+            { "thId": 1 , "mTitle": "아바타 : 물의 길", "mAge": 1 , "thType": "2D", "thDate": 221222 , "cineTime": 1430, "totalSeat": 140, "leftSeat": 114 },
+            { "thId": 1 , "mTitle": "아바타 : 물의 길", "mAge": 1 , "thType": "2D", "thDate": 221222 , "cineTime": 1700, "totalSeat": 140, "leftSeat": 113 },
+            { "thId": 1 , "mTitle": "아바타 : 물의 길", "mAge": 1 , "thType": "2D", "thDate": 221222 , "cineTime": 1930, "totalSeat": 140, "leftSeat": 14 },
+            { "thId": 1 , "mTitle": "아바타 : 물의 길", "mAge": 1 , "thType": "2D", "thDate": 221222 , "cineTime": 2200, "totalSeat": 140, "leftSeat": 120 },
+
+            ],
+
+        }
+    },
+    methods: {
+        getMovie(data) {
+            this.themaOfMovie = data;
+            console.log(data.mTitle);
+        },
+        getTheater(data) {
+            this.selectTheater = data;
+            console.log(data.cinemaName);
+
+        },
+        setTime() {
+            let myDate = new Date()
+            this.yy = myDate.getFullYear()
+            this.mm = myDate.getMonth() + 1
+            this.dd = myDate.getDate()
+            this.nowDate = this.yy + '-' + this.mm + '-' + this.dd
+            this.dayOfWeek = this.week[myDate.getDate()]
+
+        },
+
+    }
 
 }
 </script>
 
 <style scoped >
 .owl-dots {
-    display:none;
+    display: none;
 }
+
 .wrap_reserve {
     overflow: hidden;
     position: relative;
@@ -1539,6 +1057,16 @@ textarea {
     border-bottom: 1px solid #DDD;
 }
 
+.wrap_reserve .section_step_con .article.article_cinema .cinema_select_wrap>ul>div>li.depth1.active>a {
+    color: #FF243E;
+    background: #FFF url("@/assets/images/icon/check.png") no-repeat 300px center;
+    font-weight: bold;
+}
+
+.movie_select_wrap ul>li.active {
+    border: 2px solid #000;
+    background-color: #FFF;
+}
 
 .wrap_reserve .section_step_con .article .group_top {
     overflow: hidden;
@@ -1624,15 +1152,6 @@ button {
     background-color: #fff;
 }
 
-input,
-select,
-button {
-    vertical-align: middle;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
 button {
     appearance: auto;
     writing-mode: horizontal-tb !important;
@@ -1685,20 +1204,6 @@ button {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-address,
-caption,
-em,
-th {
-    font-style: normal;
-    font-weight: normal;
-}
-
 body,
 h1,
 h2,
@@ -1728,10 +1233,6 @@ h5 {
     font-weight: bold;
 }
 
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
 
 ul,
 ol {
@@ -1785,15 +1286,6 @@ ul ul {
     margin-block-end: 0px;
 }
 
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-}
 
 .wrap_reserve .section_step_con .article.article_cinema .cinema_select_wrap>ul li {
     padding: 2px;
@@ -1804,10 +1296,10 @@ ul {
     border-bottom: 1px solid #EBEBEB;
 }
 
-.cinema_select_wrap>ul>li.depth1>a {
+.cinema_select_wrap>ul>div>li.depth1>a {
     display: block;
     position: relative;
-    width: 175px;
+    width: 345px;
     box-sizing: border-box;
     padding: 10px 16px;
     font-size: 13px;
@@ -1823,34 +1315,16 @@ a:hover {
     cursor: pointer;
 }
 
-.cinema_select_wrap>ul>li.depth1>a em {
+.cinema_select_wrap>ul>div>li.depth1>a em {
     font-size: 10px;
     color: #666;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-address,
-caption,
-em,
-th {
-    font-style: normal;
-    font-weight: normal;
-}
 
 em {
     font-style: italic;
 }
 
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-}
 
 .wrap_reserve .section_step_tit {
     position: absolute;
@@ -1884,11 +1358,6 @@ a:-webkit-any-link {
     color: #FFF;
 }
 
-.wrap_reserve .section_step_tit ul li>a {
-    display: block;
-    height: 100%;
-    color: #666;
-}
 
 .wrap_reserve .section_step_tit ul li>a>strong span {
     font-family: 'Roboto';
@@ -1951,13 +1420,6 @@ figure {
     padding: 0;
 }
 
-dl {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
 
 .wrap_reserve .section_step_tit ul li>a .bx_con dl dt {
     overflow: hidden;
@@ -1975,10 +1437,6 @@ dt {
     margin-bottom: 17px;
 }
 
-dd {
-    display: block;
-    margin-inline-start: 40px;
-}
 
 .wrap_reserve .section_step_tit ul li>a {
     display: block;
@@ -1996,37 +1454,14 @@ dd {
     padding-top: 80px;
 }
 
-.wrap_reserve .section_step_con .article.article_cinema>.inner .tab_wrap.outer>li.active>.tab_tit {
-    height: 61px;
-}
 
-.tab_wrap.outer>li.active>.tab_tit {
-    border-bottom: 2px solid #111;
-    color: #000;
-}
 
-.tab_wrap.outer>li>.tab_tit {
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #CCC;
-    font-size: 15px;
-    color: #7F7F7F;
-}
-
-.tab_wrap>li>.tab_tit {
-    border: none;
-}
 
 .tab_wrap>li>.tab_tit {
     position: absolute;
     top: 0;
 }
 
-button {
-    border: 1px solid #DDD;
-    cursor: pointer;
-    background-color: #fff;
-}
 
 input,
 select,
@@ -2037,52 +1472,18 @@ button {
     -moz-appearance: none;
 }
 
-.tab_wrap>li>.tab_tit span {
-    vertical-align: top;
-    white-space: nowrap;
-}
 
 button>* {
     position: relative;
 }
 
-.tab_wrap.outer>li.active>.tab_tit {
-    border-bottom: 2px solid #111;
-    color: #000;
-}
 
-.tab_wrap.outer>li>.tab_tit {
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #CCC;
-    font-size: 15px;
-    color: #7F7F7F;
-}
-
-.wrap_reserve .section_step_con .article.article_cinema .cinema_select_wrap {
-    background-color: #F5F5F5;
-}
-
-.cinema_select_wrap {
-    position: relative;
-    height: 100%;
-    background-color: #FFF;
-}
-
-.cinema_select_wrap>ul li {
-    border-bottom: 1px solid #EBEBEB;
-}
-
-.wrap_reserve .section_step_con .article.article_cinema .cinema_select_wrap>ul>li.depth1.active>a {
-    background: #FFF no-repeat 150px 2px;
-    /* url("../../Content/images/icon/check.png") */
-}
 
 .wrap_reserve .section_step_con .article.article_cinema .cinema_select_wrap>ul .depth2 {
     background-color: #FFF;
 }
 
-.cinema_select_wrap>ul>li.depth1.active .depth2 {
+.cinema_select_wrap>ul>div>li.depth1.active .depth2 {
     display: block;
 }
 
@@ -2191,7 +1592,15 @@ p {
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
-    text-decoration: underline;
+}
+
+.cinema_select_wrap li.active>a:before {
+    content: "선택";
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    text-indent: -9999em;
 }
 
 .cinema_select_wrap>ul .depth2 ul li a {
@@ -2276,17 +1685,6 @@ a:-webkit-any-link {
     -ms-filter: "alpha(opacity=20)";
 }
 
-.mCSB_scrollTools,
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-.mCSB_scrollTools .mCSB_buttonUp,
-.mCSB_scrollTools .mCSB_buttonDown,
-.mCSB_scrollTools .mCSB_buttonLeft,
-.mCSB_scrollTools .mCSB_buttonRight {
-    -webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-    -o-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-    transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-}
 
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     position: relative;
@@ -2320,39 +1718,7 @@ a:-webkit-any-link {
     height: 61px;
 }
 
-.tab_wrap.outer>li>.tab_tit {
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #CCC;
-    font-size: 15px;
-    color: #7F7F7F;
-}
 
-.tab_wrap>li>.tab_tit {
-    border: none;
-}
-
-button {
-    border: 1px solid #DDD;
-    cursor: pointer;
-    background-color: #fff;
-}
-
-input,
-select,
-button {
-    vertical-align: middle;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.tab_wrap>li>.tab_con {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 0;
-}
 
 .article_cinema.area__movingbar.litype2 .tab_wrap.outer.actionmovingbar .wrap_nav_underline {
     position: absolute;
@@ -2458,14 +1824,6 @@ select {
     box-sizing: border-box;
 }
 
-input,
-select,
-button {
-    vertical-align: middle;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
 
 option {
     font-weight: normal;
@@ -2475,13 +1833,6 @@ option {
     padding: 0px 2px 1px;
 }
 
-.wrap_reserve .section_step_con .article.article_movie .list_filter select {
-    width: 180px;
-    height: 30px;
-    line-height: 29px;
-    margin-top: 15px;
-    padding-left: 10px;
-}
 
 .bx_btn_view {
     position: absolute;
@@ -2526,19 +1877,11 @@ option {
     padding-bottom: 30px;
 }
 
-.mCSB_container {
-    overflow: hidden;
-    width: auto;
-    height: auto;
-}
 
 .movie_select_wrap.list ul>li .bx_thm {
     display: none;
 }
 
-strong {
-    font-weight: bold;
-}
 
 img {
     border: none;
@@ -2549,15 +1892,6 @@ img {
     float: left;
 }
 
-a,
-a:link,
-a:visited,
-a:active,
-a:hover {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .movie_select_wrap.list ul>li .group_infor .bx_tit .ic_grade {
     position: absolute;
@@ -2665,12 +1999,6 @@ a:hover {
     height: 50px;
 }
 
-.mCSB_scrollTools .mCSB_dragger {
-    cursor: pointer;
-    width: 100%;
-    height: 30px;
-    z-index: 1;
-}
 
 .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
@@ -2680,12 +2008,6 @@ a:hover {
     -ms-filter: "alpha(opacity=50)";
 }
 
-.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background-color: #000;
-    background-color: rgba(0, 0, 0, 0.2);
-    filter: "alpha(opacity=20)";
-    -ms-filter: "alpha(opacity=20)";
-}
 
 .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
@@ -2695,32 +2017,6 @@ a:hover {
     -ms-filter: "alpha(opacity=90)";
 }
 
-.mCSB_scrollTools,
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-.mCSB_scrollTools .mCSB_buttonUp,
-.mCSB_scrollTools .mCSB_buttonDown,
-.mCSB_scrollTools .mCSB_buttonLeft,
-.mCSB_scrollTools .mCSB_buttonRight {
-    -webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-    -o-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-    transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
-}
-
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    position: relative;
-    width: 4px;
-    height: 100%;
-    margin: 0 auto;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.wrap_reserve .section_step_con .article.article_time {
-    width: 500px;
-}
 
 
 
@@ -2859,29 +2155,7 @@ input[type="checkbox"] {
     text-align: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-address,
-caption,
-em,
-th {
-    font-style: normal;
-    font-weight: normal;
-}
 
-
-input,
-select,
-button {
-    vertical-align: middle;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
 
 input[type="radio" i] {
     background-color: initial;
@@ -3089,88 +2363,30 @@ input {
     font-size: 13px;
 }
 
-.tab_wrap.outer>li.active>.tab_tit {
-    border-bottom: 2px solid #111;
-    color: #000;
-}
 
-.tab_wrap.outer>li>.tab_tit {
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #CCC;
-    font-size: 15px;
-    color: #7F7F7F;
-}
-
-.tab_wrap>li>.tab_tit {
-    border: none;
-}
-
-.tab_wrap>li>.tab_tit {
-    position: absolute;
-    top: 0;
-}
 
 .tab_wrap>li>.tab_tit span {
     vertical-align: top;
     white-space: nowrap;
 }
 
-.tab_wrap>li.active>.tab_con {
-    overflow: inherit;
-    position: relative;
-    width: auto;
-    height: auto;
-}
 
 .tab_wrap>li>.tab_con.ty5 {
     margin-top: -30px;
 }
 
-.tab_wrap>li>.tab_con {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 0;
-}
 
 .wrap_reserve .section_step_con .article.article_time>.inner .mCustomScrollbar {
     height: 658px;
     padding: 0 20px;
 }
 
-.mCustomScrollbar.mCS_no_scrollbar,
-.mCustomScrollbar.mCS_touch_action {
-    -ms-touch-action: auto;
-    touch-action: auto;
-}
 
-.mCustomScrollbar {
-    touch-action: pinch-zoom;
-}
-
-.mCustomScrollBox {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    max-width: 100%;
-    outline: none;
-    direction: ltr;
-}
 
 .wrap_reserve .section_step_con .article.article_time>.inner .mCSB_container {
     padding-bottom: 30px;
 }
 
-.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
-    margin-right: 0;
-}
-
-.mCSB_container {
-    overflow: hidden;
-    width: auto;
-    height: auto;
-}
 
 .group_time_select {
     margin-top: 30px;
@@ -3190,16 +2406,12 @@ input {
     margin-right: 5px;
 }
 
-.ic_grade {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    line-height: 22px;
-    border-radius: 50%;
-    font-size: 0;
-    text-align: center;
-    vertical-align: middle;
+.time_select_tit {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
 }
+
 
 .time_select_tit {
     display: flex;
@@ -3208,40 +2420,6 @@ input {
 }
 
 
-.ic_grade.gr_all:before,
-.ic_grade.gr_12:before,
-.ic_grade.gr_15:before,
-.ic_grade.gr_18:before,
-.ic_grade.gr_non:before,
-.ic_grade:before {
-    content: "";
-    display: block;
-    width: 22px;
-    height: 22px;
-    border-radius: 3px;
-}
-
-.ic_grade:before {
-    margin-left: -1px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #FFF;
-    white-space: nowrap;
-}
-
-.time_select_tit {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-}
-
-.time_select_wrap {
-    margin-top: 20px;
-}
-
-.time_select_wrap ul.list_hall {
-    margin-bottom: 5px;
-}
 
 ul,
 ol {
@@ -3267,25 +2445,12 @@ figure {
     padding: 0;
 }
 
-ul ul {
-    list-style-type: circle;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-}
 
 .time_select_wrap ul.list_hall li:first-child {
     margin-left: 0;
     padding-left: 0;
 }
 
-.time_select_wrap ul.list_hall li {
-    display: block;
-    position: relative;
-    float: left;
-    margin-left: 6px;
-    padding-left: 6px;
-    font-size: 13px;
-}
 
 .time_select_wrap ul.list_hall li:before {
     content: "";
@@ -3307,13 +2472,6 @@ ul ul {
     color: #666;
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
 
 .time_select_wrap ul.list_time li:nth-child(4n+1) {
     margin-left: 0;
@@ -3340,16 +2498,6 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#f8f8f8", GradientType=0);
 }
 
-a,
-a:link,
-a:visited,
-a:active,
-a:hover {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 dl {
     display: block;
     margin-block-start: 1em;
@@ -3372,10 +2520,6 @@ dl {
     font-size: 11px;
 }
 
-dd {
-    display: block;
-    margin-inline-start: 40px;
-}
 
 .time_select_wrap ul.list_time li>a dl dd.time strong {
     display: block;
@@ -3384,28 +2528,7 @@ dd {
     text-align: center;
 }
 
-.time_select_wrap ul.list_time li>a dl .tooltip {
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: -41px;
-    height: 32px;
-    line-height: 34px;
-    margin-left: -38px;
-    padding: 0 8px;
-    border-radius: 4px;
-    font-family: 'Roboto';
-    font-size: 13px;
-    color: #FFF;
-    white-space: nowrap;
-    background-color: #333;
-}
 
-.time_select_wrap ul.list_time li>a dl dd.seat {
-    font-family: 'Roboto';
-    font-size: 11px;
-    color: #666;
-}
 
 .time_select_wrap ul.list_time li>a dl dd.seat strong {
     color: #427652;
@@ -3421,15 +2544,7 @@ body {
     overflow-y: scroll;
 }
 
-.time_select_wrap ul.list_time li:nth-child(4n+1) {
-    margin-left: 0;
-}
 
-.time_select_wrap ul.list_time li {
-    float: left;
-    width: 23.5%;
-    margin: 0 0 11px 2%;
-}
 
 .time_select_wrap ul.list_time li>a {
     display: block;
@@ -3442,15 +2557,6 @@ body {
     background: #f8f8f8;
 }
 
-a,
-a:link,
-a:visited,
-a:active,
-a:hover {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .time_select_wrap ul.list_time li>a dl dd.time {
     margin-bottom: 5px;
@@ -3494,11 +2600,6 @@ figure {
     background-color: #333;
 }
 
-.time_select_wrap ul.list_time li>a dl dd.seat {
-    font-family: 'Roboto';
-    font-size: 11px;
-    color: #666;
-}
 
 .time_select_wrap ul.list_time li>a dl dd.hall {
     position: absolute;
