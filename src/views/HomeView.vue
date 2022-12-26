@@ -46,6 +46,7 @@
               </ul>
             </div>
             <!-- 로고 끝 -->
+<<<<<<< Updated upstream
             <!-- 소메뉴 시작 -->
             <div class="col-6 col-lg-3 text-lg-end">
               <ul
@@ -57,6 +58,8 @@
               </ul>
             </div>
             <!-- 소메뉴 끝 -->
+=======
+>>>>>>> Stashed changes
           </div>
           <!-- 상단 메뉴 끝 -->
           <!-- 하단 메뉴 : 메인메뉴 , 소메뉴 -->
@@ -69,18 +72,24 @@
             >
               <ul class="js-clone-nav text-center site-menu p-0 m-0">
                 <li class="has-children">
-                  <a href="#">예매</a>
+                  <router-link to="/reservation">예매</router-link>
                   <ul class="dropdown">
                     <li><router-link to="/reservation">예매하기</router-link></li>
                     <li><a href="#">상영시간표</a></li>
                   </ul>
                 </li>
                 <li class="has-children">
-                  <a href="#">영화</a>
+                  <router-link to="/movie-home">영화</router-link>
                   <ul class="dropdown">
+<<<<<<< Updated upstream
                     <li><a href="#">홈</a></li>
                     <li><a href="#">현재상영작</a></li>
                     <li><a href="#">상영예정작</a></li>
+=======
+                    <li><router-link to="/movie-home">홈</router-link></li>
+                    <li><router-link to="/movie-list/current">현재상영작</router-link></li>
+                    <li><router-link to="/movie-list/expected">상영예정작</router-link></li>
+>>>>>>> Stashed changes
                   </ul>
                 </li>
                 <li class="has-children">
@@ -94,30 +103,33 @@
                   </ul>
                 </li>
                 <li class="has-children">
-                  <a href="#">이벤트</a>
+                  <router-link to="/event-home">이벤트</router-link>
                   <ul class="dropdown">
-                    <li><a href="#">홈</a></li>
-                    <li><a href="#">영화</a></li>
-                    <li><a href="#">시사회/무대인사</a></li>
+                    <li><router-link to="/event-home">홈</router-link></li>
+                    <li><router-link to="/event-theater">영화</router-link></li>
+                    <li><router-link to="/event-premiere">시사회/무대인사</router-link></li>
                   </ul>
                 </li>
               </ul>
             </div>
             <!-- 메인메뉴 끝 -->
             <!-- 소메뉴 시작 -->
-            <div class="col-6 col-lg-3 text-lg-end">
+            <div v-if="!currentUser" class="col-6 col-lg-3 text-lg-end">
               <ul
                 class="js-clone-nav d-none d-lg-inline-block text-end site-menu"
               >
+                <li><a href="about.html">로그인</a></li>
                 <li><a href="about.html">회원가입</a></li>
-                <li><a href="about.html">바로예매</a></li>
+                <li>
+                  <router-link to="/customer-center">고객센터</router-link>
+                </li>
                 <li>
                   <button
                     class="btn_menu_all"
                     style="border: none; background: none"
                   >
                     <img
-                      src="../assets/images/nav/all_menu.png"
+                      src="@/assets/images/icon/all_menu.png"
                       width="17px"
                       style="margin-top: -5px"
                       alt=""
@@ -125,7 +137,39 @@
                   </button>
                 </li>
               </ul>
+              <a
+                href="#"
+                class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+                data-toggle="collapse"
+                data-target="#main-navbar"
+              >
+                <span></span>
+              </a>
+            </div>
 
+            <div v-if="currentUser" class="col-6 col-lg-3 text-lg-end">
+              <ul
+                class="js-clone-nav d-none d-lg-inline-block text-end site-menu"
+              >
+                <li><a href="about.html">마이페이지</a></li>
+                <li><a href="about.html">로그아웃</a></li>
+                <li>
+                  <router-link to="/customer-center">고객센터</router-link>
+                </li>
+                <li>
+                  <button
+                    class="btn_menu_all"
+                    style="border: none; background: none"
+                  >
+                    <img
+                      src="@/assets/images/nav/all_menu.png"
+                      width="17px"
+                      style="margin-top: -5px"
+                      alt=""
+                    />
+                  </button>
+                </li>
+              </ul>
               <a
                 href="#"
                 class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
@@ -157,7 +201,7 @@
 
       <!-- 인기영화 carosal 시작 -->
       <div class="slideList">
-        <AppSlider :slideList="slideList" />
+        <AppSlider :screeningList="screeningList" />
       </div>
       <!-- 인기영화 carosal 끝 -->
 
@@ -465,40 +509,55 @@ import initCustom from "../assets/js/custom";
 import AppSlider from "@/components/AppSlider.vue";
 
 // 임시데이터
-const slideList = [
+const screeningList = [
   {
-    img: " images/img-1.jpg",
-    text: "제목1",
+    mposter: "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/18755_103_1.jpg",
+    mtitle: "아바타 : 물의 길",
+    audiencesRate: 9.5,
+    rank: 1,
+    ticketingPer: 78.9,
   },
   {
-    img: " images/img-2.jpg",
-    text: "제목2",
+    mposter: "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19224_103_1.jpg",
+    mtitle: "영웅",
+    audiencesRate: 9.4,
+    rank: 2,
+    ticketingPer: 13.5,
   },
   {
-    img: " images/img-3.jpg",
-    text: "제목3",
+    mposter: "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19300_103_1.jpg",
+    mtitle: "신비아파트 극장판 차원도깨비와 7개의 세계",
+    audiencesRate: 9.8,
+    rank: 3,
+    ticketingPer: 1.6,
   },
   {
-    img: " images/img-4.jpg",
-    text: "제목4",
+    mposter: "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202211/19162_103_1.jpg",
+    mtitle: "올빼미",
+    audiencesRate: 9.7,
+    rank: 4,
+    ticketingPer: 1.2,
   },
   {
-    img: " images/img-5.jpg",
-    text: "제목5",
+    mposter: "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202211/19256_103_1.jpg",
+    mtitle: "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+    audiencesRate: 9.2,
+    rank: 5,
+    ticketingPer: 0.8,
   },
   {
-    img: " images/img-6.jpg",
-    text: "제목6",
-  },
-  {
-    img: " images/img-7.jpg",
-    text: "제목7",
+    mposter: "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202212/19262_103_1.jpg",
+    mtitle: "핑크퐁 시네마 콘서트 2: 원더스타 콘서트 대작전",
+    audiencesRate: 10.0,
+    rank: 6,
+    ticketingPer: 0.4,
   },
 ];
 export default {
   data() {
     return {
-      slideList,
+      screeningList,
+      currentUser: true, // 임시 로직, 로그인 구현시 지우기
     };
   },
   components: {
@@ -506,6 +565,14 @@ export default {
   },
   mounted() {
     initCustom();
+  },
+  methods: {
+    logOut() {
+      this.currentUser = true;  // 임시 로직, 로그인 구현시 지우기
+
+      // this.$store.dispatch("auth/logout"); // 공통함수 logout 호출
+      // this.$router.push("/login"); // 강제 /login 페이지로 이동
+    },
   },
 };
 </script>

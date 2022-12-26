@@ -9898,6 +9898,7 @@ textarea {
   /* .sec_tit{
     border-bottom: grey dotted 1px;
   } */
+<<<<<<< Updated upstream
   .special_wrap2 {
     list-style:none;
   }
@@ -9934,6 +9935,107 @@ textarea {
 .hero.overlay .main_cont_wrap.premiere .premiere_wrap > li + li {margin-left:11px;}
 .hero.overlay .main_cont_wrap.premiere .premiere_wrap > li > a {display:block; overflow:hidden; border-radius:4px; width:319px;}
 .hero.overlay .main_cont_wrap.premiere .premiere_wrap > li > a > img {width:100%;}
+=======
+.special_wrap2 {
+  list-style: none;
+}
+.special_wrap2 li {
+  float: left;
+}
+.img_lst_wrap {
+  list-style: none;
+}
+.img_lst_wrap li {
+  float: left;
+}
+.premiere_wrap {
+  list-style: none;
+}
+.premiere_wrap li {
+  float: left;
+}
+#contents {
+  width: 980px;
+  margin: 0 auto;
+  padding: 50px 0 0 0;
+}
+.hero.overlay .main_cont_wrap {
+  position: relative;
+  margin-bottom: 33px;
+}
+.hero.overlay .main_cont_wrap .sec_tit {
+  position: relative;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.hero.overlay .main_cont_wrap .sec_tit > span {
+  position: absolute;
+  top: -11px;
+  font-size: 10px;
+  color: #666;
+  letter-spacing: 2px;
+}
+.hero.overlay .main_cont_wrap .btn_txt_more {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  background-position: right 3.5px;
+}
+.hero.overlay .main_cont_wrap.special .sec_tit {
+  border-bottom: 1px dashed #d9d9d9;
+  padding-bottom: 10px;
+}
+.hero.overlay .main_cont_wrap.special .special_wrap {
+  padding: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.hero.overlay .main_cont_wrap.special .special_wrap > li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.hero.overlay .main_cont_wrap.special .special_wrap > li > a {
+  display: block;
+  text-align: center;
+}
+.hero.overlay .main_cont_wrap.special .special_wrap2 {
+  padding: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.hero.overlay .main_cont_wrap.special .special_wrap2 > li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.hero.overlay .main_cont_wrap.special .special_wrap2 > li > a {
+  display: block;
+  text-align: center;
+}
+.hero.overlay .main_cont_wrap.premiere {
+  margin-top: 15px;
+  margin-bottom: 53px;
+}
+.hero.overlay .main_cont_wrap.premiere .premiere_wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.hero.overlay .main_cont_wrap.premiere .premiere_wrap > li {
+  float: left;
+}
+.hero.overlay .main_cont_wrap.premiere .premiere_wrap > li + li {
+  margin-left: 11px;
+}
+.hero.overlay .main_cont_wrap.premiere .premiere_wrap > li > a {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 319px;
+}
+.hero.overlay .main_cont_wrap.premiere .premiere_wrap > li > a > img {
+  width: 100%;
+}
+>>>>>>> Stashed changes
 /* .hero.overlay .mid_menu_wrap {position:relative; font-size:0; margin-bottom:50px;}
 .hero.overlay .mid_menu_wrap .mid_itm {display:inline-block; width:187px; height:133px;}
 .hero.overlay .mid_menu_wrap .mid_itm+.mid_itm {margin-left:10px;}

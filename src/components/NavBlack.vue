@@ -34,43 +34,42 @@
               <div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
                 <ul class="js-clone-nav text-center site-menu p-0 m-0">
                   <li class="has-children">
-                    <a href="#">예매</a>
-                    <ul class="dropdown">
-                      <li><router-link to="/reservation">예매하기</router-link></li>
-                      <li><a href="#">상영시간표</a></li>
-                      <li>
-                        <router-link to="/reservation-check">예매확인</router-link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="has-children">
-                    <a href="#">영화</a>
-                    <ul class="dropdown">
-                      <li><a href="#">홈</a></li>
-                      <li><a href="#">현재상영작</a></li>
-                      <li><a href="#">상영예정작</a></li>
-                    </ul>
-                  </li>
-                  <li class="has-children">
-                    <a href="#">영화관</a>
-                    <ul class="dropdown">
-                      <li><a href="#">스페셜관</a></li>
-                      <li><a href="#">영화관1</a></li>
-                      <li><a href="#">영화관2</a></li>
-                      <li><a href="#">영화관3</a></li>
-                      <li><a href="#">영화관4</a></li>
-                    </ul>
-                  </li>
-                  <li class="has-children">
-                    <a href="#">이벤트</a>
-                    <ul class="dropdown">
-                      <li><a href="#">홈</a></li>
-                      <li><a href="#">영화</a></li>
-                      <li><a href="#">시사회/무대인사</a></li>
-                    </ul>
-                  </li>
+                  <router-link to="/reservation">예매</router-link>
+                  <ul class="dropdown">
+                    <li><router-link to="/reservation">예매하기</router-link></li>
+                    <li><a href="#">상영시간표</a></li>
+                    <li><router-link to="/reservation-check">예매확인</router-link></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <router-link to="/movie-home">영화</router-link>
+                  <ul class="dropdown">
+                    <li><router-link to="/movie-home">홈</router-link></li>
+                    <li><router-link to="/movie-list/current">현재상영작</router-link></li>
+                    <li><router-link to="/movie-list/expected">상영예정작</router-link></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">영화관</a>
+                  <ul class="dropdown">
+                    <li><a href="#">스페셜관</a></li>
+                    <li><a href="#">영화관1</a></li>
+                    <li><a href="#">영화관2</a></li>
+                    <li><a href="#">영화관3</a></li>
+                    <li><a href="#">영화관4</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <router-link to="/event-home">이벤트</router-link>
+                  <ul class="dropdown">
+                    <li><router-link to="/event-home">홈</router-link></li>
+                    <li><router-link href="/event-theater">영화</router-link></li>
+                    <li><router-link to="/event-premiere">시사회/무대인사</router-link></li>
+                  </ul>
+                </li>
                 </ul>
               </div>
+<<<<<<< Updated upstream
               <div class="col-6 col-lg-3 text-lg-end">
                 <ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu">
                   <li><a href="about.html">회원가입</a></li>
@@ -81,13 +80,73 @@
                     </button>
                   </li>
                 </ul>
+=======
+              <div v-if="!currentUser" class="col-6 col-lg-3 text-lg-end">
+              <ul
+                class="js-clone-nav d-none d-lg-inline-block text-end site-menu"
+              >
+                <li><a href="about.html">로그인</a></li>
+                <li><a href="about.html">회원가입</a></li>
+                <li>
+                  <router-link to="/customer-center">고객센터</router-link>
+                </li>
+                <li>
+                  <button
+                    class="btn_menu_all"
+                    style="border: none; background: none"
+                  >
+                    <img
+                      src="@/assets/images/icon/all_menu.png"
+                      width="17px"
+                      style="margin-top: -5px"
+                      alt=""
+                    />
+                  </button>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+                data-toggle="collapse"
+                data-target="#main-navbar"
+              >
+                <span></span>
+              </a>
+            </div>
+>>>>>>> Stashed changes
 
-                <a href="#"
-                  class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
-                  data-toggle="collapse" data-target="#main-navbar">
-                  <span></span>
-                </a>
-              </div>
+            <div v-if="currentUser" class="col-6 col-lg-3 text-lg-end">
+              <ul
+                class="js-clone-nav d-none d-lg-inline-block text-end site-menu"
+              >
+                <li><a href="about.html">마이페이지</a></li>
+                <li><a href="about.html">로그아웃</a></li>
+                <li>
+                  <router-link to="/customer-center">고객센터</router-link>
+                </li>
+                <li>
+                  <button
+                    class="btn_menu_all"
+                    style="border: none; background: none"
+                  >
+                    <img
+                      src="@/assets/images/icon/all_menu.png"
+                      width="17px"
+                      style="margin-top: -5px"
+                      alt=""
+                    />
+                  </button>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+                data-toggle="collapse"
+                data-target="#main-navbar"
+              >
+                <span></span>
+              </a>
+            </div>
             </div>
           </div>
         </div>
@@ -98,7 +157,19 @@
 
 <script>
 export default {
+  data() {
+    return {
+      currentUser: true, // 임시 로직, 로그인 구현시 지우기
+    }
+  },
+  methods: {
+    logOut() {
+      this.currentUser = true;  // 임시 로직, 로그인 구현시 지우기
 
+      // this.$store.dispatch("auth/logout"); // 공통함수 logout 호출
+      // this.$router.push("/login"); // 강제 /login 페이지로 이동
+    },
+  },
 }
 </script>
 
